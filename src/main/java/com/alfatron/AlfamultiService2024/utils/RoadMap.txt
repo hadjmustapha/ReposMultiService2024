@@ -1,3 +1,4 @@
+***************** ROADMAP ************************
 1.cration du projet
 2.mettre sous git -> branch dev
 3.push sur github
@@ -13,3 +14,15 @@
 11.creation de la gestion d'exception
 
 depoloiment de l'application en production
+************************************************
+
+***************** Database ***********************
+Nombre de tables : 8
+1.ODM
+2.Employee
+3.Nature
+4.Structure
+5.Client
+6.Fournisseur
+7.Transport
+8.Vehicule
