@@ -45,6 +45,12 @@ DATE_NAISSANCE	datetime
 GROUPE_SANG	nvarchar(3)
 ID_FAMILLE	int
 
+NOM_PRENOM		Unchecked
+AUX_COMPLET		Unchecked
+
+bit1	bit
+bit2	bit
+
 ID_POSITION_GS	int
 TELEPHONE	nvarchar(100)
 EMAIL	nvarchar(100)
