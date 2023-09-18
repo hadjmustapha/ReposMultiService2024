@@ -1,0 +1,228 @@
+****************************************Table RH_ODM **********************************
+ID	int
+DATE_D	datetime
+DATE_F	datetime
+NB_JR	int
+---------------------------------------------- ID_EMP	int
+REFERENCE	nvarchar(200)
+NATURE	int
+---------------------------------------------- ID_TRANS	int
+---------------------------------------------- ID_STRUCTURE	int
+---------------------------------------------- MOYEN_TRANS	int
+DESTINATION	nvarchar(100)
+ST_DEMANDEUR	int
+---------------------------------------------- CLIENT	int
+---------------------------------------------- FRS	int
+PROJET	nvarchar(50)
+DATE_ODM	datetime
+HEBERGEMENT	int
+RESTAURATION	int
+TAUX_AVANCE	int
+---------------------------------------------- CREATED_BY	int
+---------------------------------------------- EDITED_BY	int
+---------------------------------------------- TRANSPORT	int
+REMARQUES	text
+---------------------------------------------- ID_PDV	int
+VALIDE_1	bit
+VALIDE_2	bit
+---------------------------------------------- ID_USER	int
+*************************************************************************************
+*************************************************************************************
+                                      Table ORG_EMPLOYEE
+ID	int
+MATRICULE	int
+COMPTE_AUX	nvarchar(100)
+NOM	nvarchar(50)
+PRENOM	nvarchar(100)
+ID_CATEGORIE	int
+ID_STRUCTURE	int
+ID_POSTE	int
+DATE_ENTREE	datetime
+DATE_POSTE	datetime
+PHOTO	image
+MAINTENANCE	bit
+DATE_NAISSANCE	datetime
+GROUPE_SANG	nvarchar(3)
+ID_FAMILLE	int
+
+ID_POSITION_GS	int
+TELEPHONE	nvarchar(100)
+EMAIL	nvarchar(100)
+ID_CONTRAT	int
+NUM_SS	nvarchar(100)
+ID_SEC_CAISSE	int
+MODE_REG	int
+NUM_BANQUE	nvarchar(100)
+ID_BANQUE_EMP	int
+ID_BANQUE_EN	int
+ADRESSE	nvarchar(200)
+VILLE	nvarchar(200)
+CODE_P	nvarchar(100)
+NOM_JF	nvarchar(100)
+SIT_FAM	int
+NB_ENFANT_CHR	int
+SEXE	int
+LIEU_NAISSANCE	nvarchar(200)
+NUM_ACTE_NAISSANCE	nvarchar(100)
+COMMUNE_NAISSANCE	nvarchar(100)
+PRENOM_PERE	nvarchar(100)
+NOM_MERE	nvarchar(100)
+PRENOM_MERE	nvarchar(100)
+DATE_MARIAGE	datetime
+NOM_PRENOM_CONJ	nvarchar(100)
+CONJOINT_ACTIVE	bit
+NUM_CNI	nvarchar(100)
+NUM_ID_NAT	nvarchar(100)
+NUM_PC	nvarchar(100)
+NUM_PASS	nvarchar(100)
+ETRANGE	bit
+CODE_NAT	nvarchar(50)
+COCHE	bit
+ACTIVE	bit
+UNITE	int
+
+*************************************************************************************************
+*************************************************************************************************
+                                      Table RH_NATURE_ODM
+ID	int
+LIBELLE	nvarchar(100)
+COMPTE_6	int
+*************************************************************************************************
+*************************************************************************************************
+                                     Table ORG_STRUCTURE
+ID	int
+Libellé	nvarchar(50)
+ID_parent	int
+ID_IMAGE	int
+*************************************************************************************************
+*************************************************************************************************
+                                      Table COM_CLIENT
+ID	int
+REFERENCE	nvarchar(50)
+RAISON_SOCIALE	nvarchar(300)
+FAMILLE	int
+NOM_CONTACT	nvarchar(50)
+FONCTION_CONTACT	nvarchar(100)
+EMAIL	nvarchar(50)
+MOBILE	nvarchar(50)
+TELEPHONE	nvarchar(50)
+FAX	nvarchar(50)
+ADRESSE_1	nvarchar(200)
+ADRESSE_2	nvarchar(200)
+CP	nvarchar(50)
+VILLE	int
+PAYS	int
+COMPTE	nvarchar(50)
+COMPTE_4	nvarchar(50)
+LIV_ADRESSE_1	nvarchar(200)
+LIV_ADRESSE_2	nvarchar(200)
+LIV_CP	nvarchar(50)
+LIV_VILLE	int
+LIV_PAYS	int
+LIVRAISON_IDENTIQUE	bit
+LIMITE_CREDIT	bit
+MT_CREDIT	money
+MODALITE_CREDIT	bit
+CREDIT_JRS	int
+COMPTE_BANQUE	nvarchar(50)
+TARIF	int
+NOTES	text
+CONDITIONS_CREDIT	text
+COMPTE_AUX
+AUX_COMPLET
+RC	nvarchar(100)
+IDF	nvarchar(100)
+AIMPO	nvarchar(100)
+NIS	nvarchar(100)
+REGION	nvarchar(50)
+EXONERE	bit
+SITE_WEB	nvarchar(100)
+BLOQUER	bit
+DATE_CREATION	datetime
+REF_COMPLET
+PROSPECT	bit
+ID_USER	int
+ID_PDV_C	int
+***********************************************************************************************
+***********************************************************************************************
+                                            Table ACH_FOURNISSEUR
+ID	int
+REFERENCE	nvarchar(50)
+DATE_CREATION	datetime
+COMPTE_AUX	nvarchar(50)
+RAISON_SOCIALE	nvarchar(100)
+AUX_COMPLET
+ADRESSE	text
+CP	nvarchar(50)
+VILLE	int
+PAYS	int
+ID_FISCALE	nvarchar(50)
+RC	nvarchar(50)
+MODE_REGLEMENT	nvarchar(50)
+ECHEANCE	int
+CREDIT	money
+BANQUE	nvarchar(50)
+EXO	bit
+ETAT_FRS	nvarchar(50)
+CONTACT_PRINCIPALE	nvarchar(100)
+EMAIL_PRINCIPALE	nvarchar(100)
+CONTACT_AUTRES	text
+TEL_PRINCIPALE	nvarchar(50)
+TEL_AUTRES	text
+PRODUITS_FRS	text
+PRODUITS_RETENUS	text
+TYPE_FRS	nvarchar(10)
+FAMILLE	int
+CONTACT_FONCTION	nvarchar(100)
+FAX	nvarchar(100)
+NOTE	text
+WEB	nvarchar(100)
+ETAT	int
+REF_COMPLET
+NIS	nvarchar(100)
+***********************************************************************************************
+***********************************************************************************************
+                                             Table RH_ODM_TRANSPORT
+ID	int
+LIBELLE	nvarchar(100)
+***********************************************************************************************
+***********************************************************************************************
+                                             Table MG_INSTALLATIONS (Vehicule)
+ID	int
+CODE	nvarchar(100)
+LIBELLE_INSTAL	nvarchar(100)
+DESCRIPTION_INSTAL	text
+ID_IMMO	int
+ETAT	int
+EMPLACEMENT	int
+FAMILLE_INCIDENT	int
+FAMILLE_CONTRAT	int
+VEHICULE	bit
+EQUIPEMENT	bit
+SIM	bit
+MATRICULE	nvarchar(100)
+PHOTO	image
+NUMERO_SIM	nchar(20)
+COLOR	int
+*********************************************************************************************
+*********************************************************************************************
+                                            Table SYS_LOGIN
+ID	int
+USERNAME	nvarchar(100)
+PASSWORD	nvarchar(100)
+ID_EMPLOYEE	int
+ID_PDV	int
+**********************************************************************************************
+**********************************************************************************************
+                                            Table SYS_ROLE
+ROLE	nvarchar(50)
+LIBELLE	nvarchar(100)
+**********************************************************************************************
+**********************************************************************************************
+                                             Table SYS_LOGIN_PROFIL
+ID	int
+ID_LOGIN	int
+PROFIL	nvarchar(10)
+MODULE	nvarchar(10)
+ROLE	nvarchar(50)
+

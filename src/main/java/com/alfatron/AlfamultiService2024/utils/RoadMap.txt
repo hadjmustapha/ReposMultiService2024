@@ -8,7 +8,7 @@
 6.creation des dto
 7.creation des services
 8.creation des api rest
- 8.1 interaction avec la base de donnée
+ 8.1 interaction avec la base de donnée (test de sauvegarde et de récupération de données )
 9.Test unitaire
 10.Test d'intération
 11.creation de la gestion d'exception
@@ -17,12 +17,16 @@ depoloiment de l'application en production
 ************************************************
 
 ***************** Database ***********************
-Nombre de tables : 8
-1.ODM
-2.Employee
-3.Nature
-4.Structure
-5.Client
-6.Fournisseur
-7.Transport
-8.Vehicule
+Nombre de tables : 11
+1.RH_ODM                ( Ordre de mission )
+2.ORG_EMPLOYEE          ( Employee )
+3.RH_NATURE_ODM         ( Nature de mission )
+4.ORG_STRUCTURE         ( Structure )
+5.COM_CLIENT            ( Client )
+6.ACH_FOURNISSEUR       ( Fournisseur )
+7.RH_ODM_TRANSPORT      ( Transport )
+8.MG_INSTALLATIONS      ( Vehicule )
+9.SYS_LOGIN             ( User )
+10.SYS_ROLE             ( Role )
+11.SYS_LOGIN_PROFIL     ( User_role)
+
