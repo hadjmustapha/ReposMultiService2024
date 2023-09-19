@@ -50,6 +50,7 @@ public class Employee {
     @Column(name="PHOTO")
     String photo;
 
+
     @Column(name="MAINTENANCE")
     boolean maintenance;
 
@@ -182,6 +183,7 @@ public class Employee {
     int unite;
 
     public Employee(int matricule, String compteAux, String nom, String prenom, int id_categorie, int idStructure, int idPoste, Date dateEntree, Date datePoste, String photo, boolean maintenance, Date dateDeNaissance, String groupeSanguin, int idFamille, String nomPrenom, String auxComplet, boolean bit1, boolean bite2, int idPositionGs, String telephone, String email, int idContrat, String numeroSecuriteSociale, int idSecCaisse, int modeReglement, String numBanque, int idBanqueEmp, int idBanqueEntreprise, String adresse, String ville, String codePostale, String nomJeuneFille, int situationFamillial, int nbEnfant, int sexe, String lieuDeNaissance, String numeroActDeNaissance, String communeNaissance, String nomPere, String nomMere, String prenomMere, Date dateMariage, String nomPrenomConjoint, boolean conjointActive, String numeroCarteNational, String numeroIdentificationNational, String numPc, String numPass, boolean etrange, String codeNat, boolean coche, boolean active, int unite) {
+
         this.matricule = matricule;
         this.compteAux = compteAux;
         this.nom = nom;
