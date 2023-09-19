@@ -1,11 +1,14 @@
 package com.alfatron.AlfamultiService2024.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -121,39 +124,18 @@ public class Fournisseur {
     @Column(name="NIS",length = 100)
     private String numeroIdentificationSociale;
 
-    public Fournisseur(String references, Date dateCreation, String compteAux, String raisonSociale, String AUX_COMPLET, String adresse, String cp, int ville, int pays, String id_fiscale, String registreDeCommerce, String modeReglement, int echeance, float credit, String banque, boolean exonere, String etatFournisseur, String contactPricipale, String emailprincipale, String autresContacts, String telephonePrincipale, String autresTel, String produtisFournisseurs, String produitsRetenus, String typeFournisseurs, int familleFournisseur, String contactFonction, String fax, String note, String web, int etat, String REF_COMPLET, String numeroIdentificationSociale) {
-        this.references = references;
-        this.dateCreation = dateCreation;
-        this.compteAux = compteAux;
-        this.raisonSociale = raisonSociale;
-        this.AUX_COMPLET = AUX_COMPLET;
-        this.adresse = adresse;
-        this.cp = cp;
-        this.ville = ville;
-        this.pays = pays;
-        this.id_fiscale = id_fiscale;
-        this.registreDeCommerce = registreDeCommerce;
-        this.modeReglement = modeReglement;
-        this.echeance = echeance;
-        this.credit = credit;
-        this.banque = banque;
-        this.exonere = exonere;
-        this.etatFournisseur = etatFournisseur;
-        this.contactPricipale = contactPricipale;
-        this.emailprincipale = emailprincipale;
-        AutresContacts = autresContacts;
-        this.telephonePrincipale = telephonePrincipale;
-        this.autresTel = autresTel;
-        this.produtisFournisseurs = produtisFournisseurs;
-        this.produitsRetenus = produitsRetenus;
-        this.typeFournisseurs = typeFournisseurs;
-        this.familleFournisseur = familleFournisseur;
-        this.contactFonction = contactFonction;
-        this.fax = fax;
-        this.note = note;
-        this.web = web;
-        this.etat = etat;
-        this.REF_COMPLET = REF_COMPLET;
-        this.numeroIdentificationSociale = numeroIdentificationSociale;
+    @OneToMany(mappedBy = "fournisseur")
+    @JsonIgnore
+    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+
+    @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setFournisseur(this);
     }
-}
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setFournisseur(null);
+        ordresDeMissions.remove(odm);
+    }
+ }

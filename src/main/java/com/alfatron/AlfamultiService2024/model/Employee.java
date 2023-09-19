@@ -1,11 +1,14 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -182,60 +185,18 @@ public class Employee {
     @Column(name="UNITE")
     int unite;
 
-    public Employee(int matricule, String compteAux, String nom, String prenom, int id_categorie, int idStructure, int idPoste, Date dateEntree, Date datePoste, String photo, boolean maintenance, Date dateDeNaissance, String groupeSanguin, int idFamille, String nomPrenom, String auxComplet, boolean bit1, boolean bite2, int idPositionGs, String telephone, String email, int idContrat, String numeroSecuriteSociale, int idSecCaisse, int modeReglement, String numBanque, int idBanqueEmp, int idBanqueEntreprise, String adresse, String ville, String codePostale, String nomJeuneFille, int situationFamillial, int nbEnfant, int sexe, String lieuDeNaissance, String numeroActDeNaissance, String communeNaissance, String nomPere, String nomMere, String prenomMere, Date dateMariage, String nomPrenomConjoint, boolean conjointActive, String numeroCarteNational, String numeroIdentificationNational, String numPc, String numPass, boolean etrange, String codeNat, boolean coche, boolean active, int unite) {
+    @OneToMany(mappedBy = "employee")
+    @JsonIgnore
+    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
-        this.matricule = matricule;
-        this.compteAux = compteAux;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.id_categorie = id_categorie;
-        this.idStructure = idStructure;
-        this.idPoste = idPoste;
-        this.dateEntree = dateEntree;
-        this.datePoste = datePoste;
-        this.photo = photo;
-        this.maintenance = maintenance;
-        this.dateDeNaissance = dateDeNaissance;
-        this.groupeSanguin = groupeSanguin;
-        this.idFamille = idFamille;
-        this.nomPrenom = nomPrenom;
-        this.auxComplet = auxComplet;
-        this.bit1 = bit1;
-        this.bite2 = bite2;
-        this.idPositionGs = idPositionGs;
-        this.telephone = telephone;
-        this.email = email;
-        this.idContrat = idContrat;
-        this.numeroSecuriteSociale = numeroSecuriteSociale;
-        this.idSecCaisse = idSecCaisse;
-        this.modeReglement = modeReglement;
-        this.numBanque = numBanque;
-        this.idBanqueEmp = idBanqueEmp;
-        this.idBanqueEntreprise = idBanqueEntreprise;
-        this.adresse = adresse;
-        this.ville = ville;
-        this.codePostale = codePostale;
-        this.nomJeuneFille = nomJeuneFille;
-        this.situationFamillial = situationFamillial;
-        this.nbEnfant = nbEnfant;
-        this.sexe = sexe;
-        this.lieuDeNaissance = lieuDeNaissance;
-        this.numeroActDeNaissance = numeroActDeNaissance;
-        this.communeNaissance = communeNaissance;
-        this.nomPere = nomPere;
-        this.nomMere = nomMere;
-        this.prenomMere = prenomMere;
-        this.dateMariage = dateMariage;
-        this.nomPrenomConjoint = nomPrenomConjoint;
-        this.conjointActive = conjointActive;
-        this.numeroCarteNational = numeroCarteNational;
-        this.numeroIdentificationNational = numeroIdentificationNational;
-        this.numPc = numPc;
-        this.numPass = numPass;
-        this.etrange = etrange;
-        this.codeNat = codeNat;
-        this.coche = coche;
-        this.active = active;
-        this.unite = unite;
+    @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setEmployee(this);
+    }
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setEmployee(null);
+        ordresDeMissions.remove(odm);
     }
 }
