@@ -29,10 +29,5 @@ public class UtilisateurRole {
     @Column(name = "ROLE",length = 50)
     String role;
 
-    public UtilisateurRole(int idLogin, String profil, String moducle, String role) {
-        this.idLogin = idLogin;
-        this.profil = profil;
-        this.moducle = moducle;
-        this.role = role;
-    }
+
 }

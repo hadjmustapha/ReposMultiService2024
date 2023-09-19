@@ -1,10 +1,13 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -157,51 +160,18 @@ public class Client {
     @Column(name="ID_PDV_C")
     int idPdvClient;
 
-    public Client(String references, String raisonSociale, int famille, String nomContact, String fonctionContact, String email, String mobile, String telephone, String fax, String adresse1, String adresse2, String codePostale, int ville, int pays, String compte, String compte4, String livraisonAdresse1, String livraisonAdresse2, String livraisonCodepostale, int livraisonVille, int livraisonPays, boolean livraisonIdentique, boolean limiteCredit, float mtCredit, boolean modaliteCredit, int creditJours, String compteBanque, int tarif, String notes, String conditionCredit, String compteAux, String auxComplet, String registreDeCommerce, String identifiantFiscale, String aimpo, String numeroIdentifiantSociale, String region, boolean exonere, String siteWeb, boolean bloquer, Date dateCreation, String refComplet, boolean prospect, int idUser, int idPdvClient) {
-        this.references = references;
-        this.raisonSociale = raisonSociale;
-        this.famille = famille;
-        this.nomContact = nomContact;
-        this.fonctionContact = fonctionContact;
-        this.email = email;
-        this.mobile = mobile;
-        this.telephone = telephone;
-        this.fax = fax;
-        this.adresse1 = adresse1;
-        this.adresse2 = adresse2;
-        this.codePostale = codePostale;
-        this.ville = ville;
-        this.pays = pays;
-        this.compte = compte;
-        this.compte4 = compte4;
-        this.livraisonAdresse1 = livraisonAdresse1;
-        this.livraisonAdresse2 = livraisonAdresse2;
-        this.livraisonCodepostale = livraisonCodepostale;
-        this.livraisonVille = livraisonVille;
-        this.livraisonPays = livraisonPays;
-        this.livraisonIdentique = livraisonIdentique;
-        this.limiteCredit = limiteCredit;
-        this.mtCredit = mtCredit;
-        this.modaliteCredit = modaliteCredit;
-        this.creditJours = creditJours;
-        this.compteBanque = compteBanque;
-        this.tarif = tarif;
-        this.notes = notes;
-        this.conditionCredit = conditionCredit;
-        this.compteAux = compteAux;
-        this.auxComplet = auxComplet;
-        this.registreDeCommerce = registreDeCommerce;
-        this.identifiantFiscale = identifiantFiscale;
-        this.aimpo = aimpo;
-        this.numeroIdentifiantSociale = numeroIdentifiantSociale;
-        this.region = region;
-        this.exonere = exonere;
-        this.siteWeb = siteWeb;
-        this.bloquer = bloquer;
-        this.dateCreation = dateCreation;
-        this.refComplet = refComplet;
-        this.prospect = prospect;
-        this.idUser = idUser;
-        this.idPdvClient = idPdvClient;
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+
+    @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setClient(this);
     }
-}
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setClient(null);
+        ordresDeMissions.remove(odm);
+    }
+    }
