@@ -56,7 +56,7 @@ public class Vehicule {
     String matricule ;
 
     @Column(name ="PHOTO")
-    Image photo;
+    String photo;
 
     @Column(name ="NUMERO_SIM",length = 20)
     String numeroSim;
@@ -64,7 +64,7 @@ public class Vehicule {
     @Column(name ="COLOR")
     int couleur;
 
-    public Vehicule(String code, String libelle, String description, int idImmo, int etat, int emplcacemet, int famille_incindent, int familleContrat, boolean vehicule, boolean equipement, boolean sim, String matricule, Image photo, String numeroSim, int couleur) {
+    public Vehicule(String code, String libelle, String description, int idImmo, int etat, int emplcacemet, int famille_incindent, int familleContrat, boolean vehicule, boolean equipement, boolean sim, String matricule, String photo, String numeroSim, int couleur) {
         this.code = code;
         this.libelle = libelle;
         this.description = description;
