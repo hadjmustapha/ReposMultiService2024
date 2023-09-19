@@ -1,11 +1,14 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "MG_INSTALLATIONS")
@@ -64,21 +67,18 @@ public class Vehicule {
     @Column(name ="COLOR")
     int couleur;
 
-    public Vehicule(String code, String libelle, String description, int idImmo, int etat, int emplcacemet, int famille_incindent, int familleContrat, boolean vehicule, boolean equipement, boolean sim, String matricule, String photo, String numeroSim, int couleur) {
-        this.code = code;
-        this.libelle = libelle;
-        this.description = description;
-        this.idImmo = idImmo;
-        this.etat = etat;
-        this.emplcacemet = emplcacemet;
-        this.famille_incindent = famille_incindent;
-        this.familleContrat = familleContrat;
-        this.vehicule = vehicule;
-        this.equipement = equipement;
-        this.sim = sim;
-        this.matricule = matricule;
-        this.photo = photo;
-        this.numeroSim = numeroSim;
-        this.couleur = couleur;
+    @OneToMany(mappedBy = "vehicule")
+    @JsonIgnore
+    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+
+    @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+       odm.setVehicule(this);
+    }
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setVehicule(null);
+        ordresDeMissions.remove(odm);
     }
 }

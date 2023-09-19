@@ -28,35 +28,41 @@ public class OrdreDeMission {
     @Column(name="NB_JR")
     int nombreDeJours;
 
-    @Column(name="ID_EMP")
-    int idEmp;
+    @ManyToOne
+    @JoinColumn(name = "ID_EMP")
+    Employee employee;
 
     @Column(name="REFERENCE", length = 200)
     String references;
 
-    @Column(name="NATURE")
-    int natureMission;
+    @ManyToOne
+    @JoinColumn(name="NATURE")
+    NatureMission natureMission;
 
     @Column(name="ID_TRANS")
-    int idtransport;// toRelation
+    int idtransport;
 
-    @Column(name="ID_STRUCTURE")
-    int idStructure;// toRelation
+    @ManyToOne
+    @JoinColumn(name="ID_STRUCTURE")
+    Structure structure;
 
-    @Column(name="MOYEN_TRANS")
-    int moyenTransport; // toRelation
+    @ManyToOne
+    @JoinColumn(name="MOYEN_TRANS")
+    Vehicule vehicule;
 
     @Column(name="DESTINATION", length = 100)
     String destination ;//	nvarchar(100)
 
     @Column(name="ST_DEMANDEUR")
-    int demandeur;//	int
+    int structureOrdonatrice;//	relation a revoir !!!!
 
-    @Column(name="CLIENT")
-    int client;// toRelation
+    @ManyToOne
+    @JoinColumn(name="CLIENT")
+    Client client;
 
-    @Column(name="FRS")
-    int fournisseur;// toRelation
+    @ManyToOne
+    @JoinColumn(name="FRS")
+    Fournisseur fournisseur;
 
     @Column(name="PROJET", length = 50)
     String projet;
@@ -79,8 +85,9 @@ public class OrdreDeMission {
     @Column(name="EDITED_BY")
     int editedBy;// toRelation
 
-    @Column(name="TRANSPORT")
-    int transport;// toRelation
+    @ManyToOne
+    @JoinColumn(name="TRANSPORT")
+    TypeDeTransport typeDeTransport;
 
     @Column(name="REMARQUES")
     String remarques;
@@ -97,34 +104,4 @@ public class OrdreDeMission {
     @Column(name="ID_USER")
     int idUtilisateur;// int toRelation
 
-    //Constructeur a regenérer après mise de relation entre entities
-
-    public OrdreDeMission(Date dateDebut, Date dateFin, int nombreDeJours, int idEmp, String references, int natureMission, int idtransport, int idStructure, int moyenTransport, String destination, int demandeur, int client, int fournisseur, String projet, Date dateOrdreDeMission, int hebergement, int restauration, int tauxAvance, int createdBy, int editedBy, int transport, String remarques, int idPointDeVente, boolean valide1, boolean valide2, int idUtilisateur) {
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.nombreDeJours = nombreDeJours;
-        this.idEmp = idEmp;
-        this.references = references;
-        this.natureMission = natureMission;
-        this.idtransport = idtransport;
-        this.idStructure = idStructure;
-        this.moyenTransport = moyenTransport;
-        this.destination = destination;
-        this.demandeur = demandeur;
-        this.client = client;
-        this.fournisseur = fournisseur;
-        this.projet = projet;
-        this.dateOrdreDeMission = dateOrdreDeMission;
-        this.hebergement = hebergement;
-        this.restauration = restauration;
-        this.tauxAvance = tauxAvance;
-        this.createdBy = createdBy;
-        this.editedBy = editedBy;
-        this.transport = transport;
-        this.remarques = remarques;
-        this.idPointDeVente = idPointDeVente;
-        this.valide1 = valide1;
-        this.valide2 = valide2;
-        this.idUtilisateur = idUtilisateur;
-    }
 }

@@ -1,6 +1,5 @@
 package com.alfatron.AlfamultiService2024.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
@@ -11,45 +10,36 @@ import lombok.Setter;
 import java.util.ArrayList;
 
 @Entity
-@Table(name = "ORG_STRUCTURE")
+@Table(name = "RH_ODM_TRANSPORT")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Structure {
+public class TypeDeTransport {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
+    @Column(name = "ID")
     int id;
 
-    @Column(name="Libellé",length = 50)
-    String libelle;
+    @Column(name = "LIBELLE",length = 100)
+    String libelle	;
 
-    @Column(name="ID_parent")
-    int idParent;
-
-    @Column(name="ID_IMAGE")
-    int idImage;
-
-    public Structure(String libelle, int idParent, int idImage) {
-        this.libelle = libelle;
-        this.idParent = idParent;
-        this.idImage = idImage;
+    public TypeDeTransport(String libelle){
+        this.libelle=libelle;
     }
 
-    @OneToMany(mappedBy = "structure")
+    @OneToMany(mappedBy = "typeDeTransport")
     @JsonIgnore
-    ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){
         ordresDeMissions.add(odm);
-        odm.setStructure(this);
+        odm.setTypeDeTransport(this);
     }
-
     @Transactional
     public void deleteOrdreDeMission(OrdreDeMission odm){
-        odm.setStructure(null);
+        odm.setTypeDeTransport(null);
         ordresDeMissions.remove(odm);
     }
 }

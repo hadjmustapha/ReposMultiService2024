@@ -29,10 +29,5 @@ public class Utilisateur {
     @Column(name = "ID_PDV")
     int idPdv;
 
-    public Utilisateur(String username, String password, int idEmployee, int idPdv) {
-        this.username = username;
-        this.password = password;
-        this.idEmployee = idEmployee;
-        this.idPdv = idPdv;
-    }
+
 }

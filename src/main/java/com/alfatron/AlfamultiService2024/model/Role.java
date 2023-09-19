@@ -22,7 +22,4 @@ public class Role {
     @Column(name = "LIBELLE",length = 100)
     String libelle;
 
-    public Role(String libelle) {
-        this.libelle = libelle;
-    }
 }

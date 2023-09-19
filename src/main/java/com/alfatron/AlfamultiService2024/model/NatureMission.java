@@ -1,9 +1,13 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "RH_NATURE_ODM")
@@ -26,5 +30,21 @@ public class NatureMission{
     public NatureMission(String libelle, int compte6) {
         this.libelle = libelle;
         this.compte6 = compte6;
+    }
+
+    @OneToMany(mappedBy = "natureMission")
+    @JsonIgnore
+    ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+
+    @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setNatureMission(this);
+    }
+
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.remove(odm);
+        odm.setNatureMission(null);
     }
 }
