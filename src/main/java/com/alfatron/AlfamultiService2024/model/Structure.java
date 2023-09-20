@@ -27,16 +27,10 @@ public class Structure {
     String libelle;
 
     @Column(name="ID_parent")
-    int idParent;
+    Integer idParent;
 
     @Column(name="ID_IMAGE")
-    int idImage;
-
-    public Structure(String libelle, int idParent, int idImage) {
-        this.libelle = libelle;
-        this.idParent = idParent;
-        this.idImage = idImage;
-    }
+    Integer idImage;
 
     @OneToMany(mappedBy = "structure")
     @JsonIgnore

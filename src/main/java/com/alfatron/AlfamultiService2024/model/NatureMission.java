@@ -26,8 +26,7 @@ public class NatureMission{
     String libelle;
 
     @Column(name = "COMPTE_6")
-    int compte6;
-
+    Integer compte6;
 
     @OneToMany(mappedBy = "natureMission")
     @JsonIgnore
@@ -45,9 +44,5 @@ public class NatureMission{
         odm.setNatureMission(null);
     }
 
-    public NatureMission(String libelle, int compte6, ArrayList<OrdreDeMission> ordresDeMissions) {
-        this.libelle = libelle;
-        this.compte6 = compte6;
-        this.ordresDeMissions = ordresDeMissions;
-    }
+
 }

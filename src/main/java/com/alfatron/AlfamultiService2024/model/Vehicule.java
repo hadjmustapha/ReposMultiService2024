@@ -33,28 +33,28 @@ public class Vehicule {
     String description;
 
     @Column(name = "ID_IMMO")
-    int idImmo;
+    Integer idImmo;
 
     @Column(name ="ETAT")
-    int etat ;
+    Integer etat ;
 
     @Column(name = "EMPLACEMENT")
-    int emplcacemet;
+    Integer emplcacemet;
 
     @Column(name ="FAMILLE_INCIDENT")
-    int famille_incindent;
+    Integer famille_incindent;
 
     @Column(name ="FAMILLE_CONTRAT")
-    int familleContrat;
+    Integer familleContrat;
 
     @Column(name ="VEHICULE")
-    boolean vehicule;
+    Boolean vehicule;
 
     @Column(name ="EQUIPEMENT")
-    boolean equipement;
+    Boolean equipement;
 
     @Column(name ="SIM")
-    boolean sim;
+    Boolean sim;
 
     @Column(name ="MATRICULE",length = 100)
     String matricule ;
@@ -66,7 +66,7 @@ public class Vehicule {
     String numeroSim;
 
     @Column(name ="COLOR")
-    int couleur;
+    Integer couleur;
 
     @OneToMany(mappedBy = "vehicule")
     @JsonIgnore
