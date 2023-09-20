@@ -22,112 +22,112 @@ public class Fournisseur {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;//ID	int
+    int id;
 
     @Column(name="REFERENCE",length = 50)
-    private String references;
+    String references;
 
     @Column(name="DATE_CREATION")
-    private Date dateCreation;
+    Date dateCreation;
 
     @Column(name="COMPTE_AUX",length = 50,nullable = false)
-    private String compteAux;
+    String compteAux;
 
     @Column(name="RAISON_SOCIALE",length = 100)
-    private String raisonSociale;
+    String raisonSociale;
 
     @Column(name="AUX_COMPLET")
     @Transient
-    private String AUX_COMPLET;
+    String AUX_COMPLET;
 
     @Column(name="ADRESSE")
-    private String adresse;
+    String adresse;
 
     @Column(name="CP",length = 50)
-    private String cp;
+    String cp;
 
     @Column(name="VILLE")
-    private int ville ;
+    Integer ville ;
 
     @Column(name="PAYS")
-    private int pays;
+    Integer pays;
 
     @Column(name="ID_FISCALE",length = 50)
-    private String id_fiscale;
+    String id_fiscale;
 
     @Column(name="RC",length = 50)
-    private String registreDeCommerce;
+    String registreDeCommerce;
 
     @Column(name="MODE_REGLEMENT",length = 50)
-    private String modeReglement;
+    String modeReglement;
 
     @Column(name="ECHEANCE")
-    private int echeance;
+    Integer echeance;
 
     @Column(name="CREDIT")
-    private float credit;
+    Float credit;
 
     @Column(name="BANQUE",length = 50)
-    private String banque;
+    String banque;
 
     @Column(name="EXO")
-    private boolean exonere;
+    Boolean exonere;
 
     @Column(name="ETAT_FRS",length = 50)
-    private String etatFournisseur;
+    String etatFournisseur;
 
     @Column(name="CONTACT_PRINCIPALE",length = 100)
-    private String contactPricipale;
+    String contactPricipale;
 
     @Column(name="EMAIL_PRINCIPALE",length = 100)
-    private String emailprincipale;
+    String emailprincipale;
 
     @Column(name="CONTACT_AUTRES")
-    private String AutresContacts;
+    String AutresContacts;
 
     @Column(name="TEL_PRINCIPALE",length = 50)
-    private String telephonePrincipale;
+    String telephonePrincipale;
 
     @Column(name="TEL_AUTRES")
-    private String autresTel;
+    String autresTel;
 
     @Column(name="PRODUITS_FRS")
-    private String produtisFournisseurs;
+    String produtisFournisseurs;
 
     @Column(name="PRODUITS_RETENUS")
-    private String produitsRetenus;
+    String produitsRetenus;
 
     @Column(name="TYPE_FRS",length = 10)
-    private String typeFournisseurs;
+    String typeFournisseurs;
 
     @Column(name="FAMILLE",nullable = false)
-    private int familleFournisseur;
+    Integer familleFournisseur;
 
     @Column(name="CONTACT_FONCTION",length = 100)
-    private String contactFonction;
+    String contactFonction;
 
     @Column(name="FAX",length = 100)
-    private String fax;
+    String fax;
 
     @Column(name="NOTE")
-    private String note;
+    String note;
 
     @Column(name="WEB",length = 100)
-    private String web;
+    String web;
 
     @Column(name="ETAT")
-    private int etat;
+    Integer etat;
 
     @Transient
     @Column(name="REF_COMPLET")
-    private String REF_COMPLET;
+    String REF_COMPLET;
 
     @Column(name="NIS",length = 100)
-    private String numeroIdentificationSociale;
+    String numeroIdentificationSociale;
 
     @OneToMany(mappedBy = "fournisseur")
     @JsonIgnore
-    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){

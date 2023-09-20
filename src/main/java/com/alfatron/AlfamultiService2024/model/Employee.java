@@ -25,7 +25,7 @@ public class Employee {
     int id;
 
     @Column(name="MATRICULE")
-    int matricule;
+    Integer matricule;
 
     @Column(name="COMPTE_AUX",length = 100)
     String compteAux;
@@ -37,13 +37,13 @@ public class Employee {
     String prenom;
 
     @Column(name="ID_CATEGORIE")
-    int id_categorie;
+    Integer id_categorie;
 
     @Column(name="ID_STRUCTURE")
-    int idStructure;
+    Integer idStructure;
 
     @Column(name="ID_POSTE")
-    int idPoste;
+    Integer idPoste;
 
     @Column(name="DATE_ENTREE")
     Date dateEntree;
@@ -54,9 +54,8 @@ public class Employee {
     @Column(name="PHOTO")
     String photo;
 
-
     @Column(name="MAINTENANCE")
-    boolean maintenance;
+    Boolean maintenance;
 
     @Column(name="DATE_NAISSANCE")
     Date dateDeNaissance;
@@ -65,7 +64,7 @@ public class Employee {
     String groupeSanguin;
 
     @Column(name="ID_FAMILLE")
-    int idFamille;
+    Integer idFamille;
 
     @Transient
     @Column(name="NOM_PRENOM")
@@ -76,13 +75,13 @@ public class Employee {
     String auxComplet;
 
     @Column(name="bit1")
-    boolean bit1;
+    Boolean bit1;
 
     @Column(name="bit2")
-    boolean bite2;
+    Boolean bite2;
 
     @Column(name="ID_POSITION_GS")
-    int idPositionGs;
+    Integer idPositionGs;
 
     @Column(name="TELEPHONE",length = 100)
     String telephone;
@@ -91,25 +90,25 @@ public class Employee {
     String email;
 
     @Column(name="ID_CONTRAT")
-    int idContrat;
+    Integer idContrat;
 
     @Column(name="NUM_SS",length = 100)
     String numeroSecuriteSociale;
 
     @Column(name="ID_SEC_CAISSE")
-    int idSecCaisse;
+    Integer idSecCaisse;
 
     @Column(name="MODE_REG")
-    int modeReglement;
+    Integer modeReglement;
 
     @Column(name="NUM_BANQUE",length = 100)
     String numBanque;
 
     @Column(name="ID_BANQUE_EMP")
-    int idBanqueEmp;
+    Integer idBanqueEmp;
 
     @Column(name="ID_BANQUE_EN")
-    int idBanqueEntreprise;
+    Integer idBanqueEntreprise;
 
     @Column(name="ADRESSE",length = 200)
     String adresse;
@@ -124,13 +123,13 @@ public class Employee {
     String nomJeuneFille;
 
     @Column(name="SIT_FAM")
-    int situationFamillial;
+    Integer situationFamillial;
 
     @Column(name="NB_ENFANT_CHR")
-    int nbEnfant;
+    Integer nbEnfant;
 
     @Column(name="SEXE")
-    int sexe;
+    Integer sexe;
 
     @Column(name="LIEU_NAISSANCE",length = 200)
     String lieuDeNaissance;
@@ -157,7 +156,7 @@ public class Employee {
     String nomPrenomConjoint;
 
     @Column(name="CONJOINT_ACTIVE")
-    boolean conjointActive;
+    Boolean conjointActive;
 
     @Column(name="NUM_CNI",length = 100)
     String numeroCarteNational;
@@ -172,19 +171,19 @@ public class Employee {
     String numPass;
 
     @Column(name="ETRANGE")
-    boolean etrange;
+    Boolean etrange;
 
     @Column(name="CODE_NAT",length = 50)
     String codeNat;
 
     @Column(name="COCHE")
-    boolean coche;
+    Boolean coche;
 
     @Column(name="ACTIVE")
-    boolean active;
+    Boolean active;
 
     @Column(name="UNITE")
-    int unite;
+    Integer unite;
 
     @OneToMany(mappedBy = "employee")
     @JsonIgnore
