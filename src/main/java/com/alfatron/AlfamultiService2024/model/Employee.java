@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ORG_EMPLOYEE")
@@ -187,7 +188,7 @@ public class Employee {
 
     @OneToMany(mappedBy = "employee")
     @JsonIgnore
-    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){
