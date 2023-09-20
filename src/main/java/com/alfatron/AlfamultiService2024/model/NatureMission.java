@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "RH_NATURE_ODM")
@@ -27,14 +28,10 @@ public class NatureMission{
     @Column(name = "COMPTE_6")
     int compte6;
 
-    public NatureMission(String libelle, int compte6) {
-        this.libelle = libelle;
-        this.compte6 = compte6;
-    }
 
     @OneToMany(mappedBy = "natureMission")
     @JsonIgnore
-    ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<OrdreDeMission> ordresDeMissions= new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){
@@ -46,5 +43,11 @@ public class NatureMission{
     public void deleteOrdreDeMission(OrdreDeMission odm){
         ordresDeMissions.remove(odm);
         odm.setNatureMission(null);
+    }
+
+    public NatureMission(String libelle, int compte6, ArrayList<OrdreDeMission> ordresDeMissions) {
+        this.libelle = libelle;
+        this.compte6 = compte6;
+        this.ordresDeMissions = ordresDeMissions;
     }
 }

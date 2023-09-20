@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "COM_CLIENT")
@@ -162,7 +163,7 @@ public class Client {
 
     @OneToMany(mappedBy = "client")
     @JsonIgnore
-    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){

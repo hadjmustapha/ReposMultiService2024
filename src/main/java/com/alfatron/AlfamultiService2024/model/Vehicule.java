@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "MG_INSTALLATIONS")
@@ -69,7 +70,7 @@ public class Vehicule {
 
     @OneToMany(mappedBy = "vehicule")
     @JsonIgnore
-    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){

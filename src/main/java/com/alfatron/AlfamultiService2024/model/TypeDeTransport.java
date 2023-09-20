@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "RH_ODM_TRANSPORT")
@@ -30,7 +31,7 @@ public class TypeDeTransport {
 
     @OneToMany(mappedBy = "typeDeTransport")
     @JsonIgnore
-    private ArrayList<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
     @Transactional
     public void addOrdreDeMission(OrdreDeMission odm){
