@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,6 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@DynamicUpdate
 public class Fournisseur {
 
     @Id
@@ -37,7 +39,6 @@ public class Fournisseur {
     String raisonSociale;
 
     @Column(name="AUX_COMPLET")
-    @Transient
     String AUX_COMPLET;
 
     @Column(name="ADRESSE")
@@ -118,7 +119,6 @@ public class Fournisseur {
     @Column(name="ETAT")
     Integer etat;
 
-    @Transient
     @Column(name="REF_COMPLET")
     String REF_COMPLET;
 

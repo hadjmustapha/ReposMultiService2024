@@ -7,14 +7,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
-
-import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
-
 
 public interface Client_Api {
 
@@ -27,4 +22,5 @@ public interface Client_Api {
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
     public Optional<Client> findById(@PathVariable int id);
+
 }
