@@ -2,6 +2,8 @@ package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.OrdreDeMission_Api;
 import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
+import com.alfatron.AlfamultiService2024.service.OrdreDeMissionService;
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,18 +18,20 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 @AllArgsConstructor
 public class OrdreDeMissionController implements OrdreDeMission_Api {
 
-    @Override
+    private OrdreDeMissionService ordreDeMissionService;
+
     public List<OrdreDeMission> findAll() {
-        return null;
+        return ordreDeMissionService.findAll();
     }
 
-    @Override
-    public Optional<OrdreDeMission> findById(int id) {
-        return Optional.empty();
+    public Optional<OrdreDeMission> findById( int id) {
+        return ordreDeMissionService.findById(id);
     }
 
-    @Override
-    public Optional<OrdreDeMission> save() {
-        return Optional.empty();
+    @Transactional
+    public OrdreDeMission save(OrdreDeMission ordreDeMission) {
+        return ordreDeMissionService.save(ordreDeMission);
     }
+
+
 }

@@ -6,15 +6,17 @@ import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "RH_ODM_TRANSPORT")
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
+@DynamicUpdate
 public class TypeDeTransport {
 
     @Id
@@ -38,9 +40,16 @@ public class TypeDeTransport {
         ordresDeMissions.add(odm);
         odm.setTypeDeTransport(this);
     }
+
     @Transactional
     public void deleteOrdreDeMission(OrdreDeMission odm){
         odm.setTypeDeTransport(null);
         ordresDeMissions.remove(odm);
     }
+
+    public TypeDeTransport(String libelle, List<OrdreDeMission> ordresDeMissions) {
+        this.libelle = libelle;
+        this.ordresDeMissions = ordresDeMissions;
+    }
+
 }

@@ -1,15 +1,18 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Immutable;
 
 import java.awt.*;
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -17,6 +20,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@DynamicUpdate
 public class Employee {
 
     @Id
@@ -46,12 +50,14 @@ public class Employee {
     Integer idPoste;
 
     @Column(name="DATE_ENTREE")
-    Date dateEntree;
+    //@JsonFormat(pattern="dd-MM-yyyy", timezone = "")
+    java.sql.Date dateEntree;
 
     @Column(name="DATE_POSTE")
     Date datePoste;
 
     @Column(name="PHOTO")
+    @Immutable
     String photo;
 
     @Column(name="MAINTENANCE")
@@ -66,12 +72,12 @@ public class Employee {
     @Column(name="ID_FAMILLE")
     Integer idFamille;
 
-    @Transient
     @Column(name="NOM_PRENOM")
+    @Immutable
     String nomPrenom;
 
-    @Transient
     @Column(name="AUX_COMPLET")
+    @Immutable
     String auxComplet;
 
     @Column(name="bit1")

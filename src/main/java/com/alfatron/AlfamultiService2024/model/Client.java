@@ -6,6 +6,7 @@ import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@DynamicUpdate
 public class Client {
 
     @Id
@@ -114,11 +116,9 @@ public class Client {
     String conditionCredit;
 
     @Column(name="COMPTE_AUX")
-    @Transient
     String compteAux;
 
     @Column(name="AUX_COMPLET")
-    @Transient
     String auxComplet;
 
     @Column(name="RC",length = 100)
@@ -149,7 +149,6 @@ public class Client {
     Date dateCreation;
 
     @Column(name="REF_COMPLET")
-    @Transient
     String refComplet;
 
     @Column(name="PROSPECT")
