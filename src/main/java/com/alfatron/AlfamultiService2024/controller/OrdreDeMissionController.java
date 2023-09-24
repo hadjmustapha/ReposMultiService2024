@@ -34,4 +34,11 @@ public class OrdreDeMissionController implements OrdreDeMission_Api {
     }
 
 
+    /*
+     @Transactional
+    public void deleteOrdreDeMissionById(int id) {
+        ordreDeMissionService.delete(id);
+    }
+     */
+
 }

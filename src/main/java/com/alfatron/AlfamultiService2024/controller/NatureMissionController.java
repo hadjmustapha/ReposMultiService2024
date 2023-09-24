@@ -32,4 +32,10 @@ public class NatureMissionController implements NatureMission_Api {
         return natureMissionService.findNatureMissionById(id);
     }
 
+    /*
+    public void deleteNature(int id) {
+        natureMissionService.deleteById(id);
+    }
+    */
+
 }

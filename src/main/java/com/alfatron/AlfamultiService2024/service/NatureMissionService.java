@@ -20,4 +20,8 @@ public class NatureMissionService {
     }
 
     public Optional<NatureMission> findNatureMissionById(int id){ return natureMissionRepository.findById(id);}
+
+    public void deleteById(int id){
+        natureMissionRepository.deleteById(id);
+    }
 }

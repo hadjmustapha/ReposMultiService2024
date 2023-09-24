@@ -1,13 +1,10 @@
 package com.alfatron.AlfamultiService2024.service;
 
-import com.alfatron.AlfamultiService2024.model.Employee;
 import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.repository.OrdreDeMissionRepository;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +13,7 @@ import java.util.Optional;
 public class OrdreDeMissionService {
 
     private OrdreDeMissionRepository ordreDeMissionRepository;
+
     private EmployeeService employeeService;
 
     public List<OrdreDeMission> findAll(){
@@ -33,4 +31,10 @@ public class OrdreDeMissionService {
         //ordreDeMission.setEmployee(employee);
         return ordreDeMissionRepository.save(ordreDeMission);
     };
+
+
+    public void delete(int id){
+        ordreDeMissionRepository.deleteById(id);
+    }
+
 }
