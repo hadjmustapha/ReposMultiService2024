@@ -1,5 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
+import com.alfatron.AlfamultiService2024.dto.EmployeeDto;
 import com.alfatron.AlfamultiService2024.model.Employee;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -20,5 +21,5 @@ public interface Employee_Api {
     public List<Employee> findAll();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Employee> findById(@PathVariable int id);
+    public EmployeeDto findById(@PathVariable int id);
 }

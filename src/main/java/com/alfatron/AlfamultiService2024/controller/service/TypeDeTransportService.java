@@ -1,4 +1,4 @@
-package com.alfatron.AlfamultiService2024.service;
+package com.alfatron.AlfamultiService2024.controller.service;
 
 import com.alfatron.AlfamultiService2024.dto.TypeDeTransportDto;
 import com.alfatron.AlfamultiService2024.model.TypeDeTransport;

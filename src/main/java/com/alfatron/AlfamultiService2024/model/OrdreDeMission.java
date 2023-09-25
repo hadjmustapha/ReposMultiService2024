@@ -1,12 +1,11 @@
 package com.alfatron.AlfamultiService2024.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 @Entity
 @Table(name = "RH_ODM")

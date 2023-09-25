@@ -1,4 +1,4 @@
-package com.alfatron.AlfamultiService2024.service;
+package com.alfatron.AlfamultiService2024.controller.service;
 
 import com.alfatron.AlfamultiService2024.model.Client;
 import com.alfatron.AlfamultiService2024.repository.ClientRepository;
@@ -19,6 +19,7 @@ public class ClientService {
     }
 
     public Optional<Client> findById(int id) {
+        //---- must return client Dto
         return clientRepository.findById(id);
     }
 

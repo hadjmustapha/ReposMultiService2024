@@ -1,5 +1,7 @@
-package com.alfatron.AlfamultiService2024.service;
+package com.alfatron.AlfamultiService2024.controller.service;
 
+import com.alfatron.AlfamultiService2024.dto.EmployeeDto;
+import com.alfatron.AlfamultiService2024.mapper.EmployeeMapper;
 import com.alfatron.AlfamultiService2024.model.Employee;
 import com.alfatron.AlfamultiService2024.repository.EmployeeRepository;
 import lombok.AllArgsConstructor;
@@ -13,12 +15,16 @@ import java.util.Optional;
 public class EmployeeService {
 
     private EmployeeRepository employeeRepository;
-
+    private EmployeeMapper employeeMapper;
     public List<Employee> findAll(){
         return employeeRepository.findAll();
     }
 
-    public Optional<Employee> findById(int id) {
-        return employeeRepository.findById(id);
+    public EmployeeDto findById(int id) {
+        Employee employee       = employeeRepository.findById(id).get();
+        EmployeeDto employeeDto = employeeMapper.toEmployeeDto(employee);
+
+        return employeeDto;
+
     }
 }
