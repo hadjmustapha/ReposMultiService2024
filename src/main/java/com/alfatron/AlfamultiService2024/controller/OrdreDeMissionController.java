@@ -2,7 +2,7 @@ package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.OrdreDeMission_Api;
 import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
-import com.alfatron.AlfamultiService2024.service.OrdreDeMissionService;
+import com.alfatron.AlfamultiService2024.controller.service.OrdreDeMissionService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

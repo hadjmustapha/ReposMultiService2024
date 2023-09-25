@@ -2,7 +2,7 @@ package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.Structure_Api;
 import com.alfatron.AlfamultiService2024.model.Structure;
-import com.alfatron.AlfamultiService2024.service.StructureService;
+import com.alfatron.AlfamultiService2024.controller.service.StructureService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
