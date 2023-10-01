@@ -7,6 +7,7 @@ import com.alfatron.AlfamultiService2024.mapper.OrdreDeMissionMapper;
 import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.repository.OrdreDeMissionRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.function.EntityResponse;
@@ -19,6 +20,7 @@ import static java.util.Optional.of;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class OrdreDeMissionService {
 
     private OrdreDeMissionRepository ordreDeMissionRepository;
@@ -39,7 +41,9 @@ public class OrdreDeMissionService {
 
     public OrdreDeMissionDto save(OrdreDeMissionDto ordreDeMissionDto){
         //validation des données en input
-
+        if (ordreDeMissionDto.getId() == null) {
+            ordreDeMissionDto.setId(0);
+        }
         //conversion dto en entité  --> puis reconversion à nouveau entity en dto
         return ordreDeMissionMapper.toOrdreDeMissionDto(ordreDeMissionRepository.save(ordreDeMissionMapper.toOrdreDeMission(ordreDeMissionDto)));
     };
