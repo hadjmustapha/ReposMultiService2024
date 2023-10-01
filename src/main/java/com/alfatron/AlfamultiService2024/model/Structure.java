@@ -21,7 +21,7 @@ public class Structure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ID")
-    int id;
+    Integer id;
 
     @Column(name="Libellé",length = 50)
     String libelle;

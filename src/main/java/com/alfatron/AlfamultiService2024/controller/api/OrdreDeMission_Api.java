@@ -1,5 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
+import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
 import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -19,18 +20,18 @@ public interface OrdreDeMission_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                       @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<OrdreDeMission> findAll();
+    public List<OrdreDeMissionDto> findAll();
 
 //--------------------------------------------------------------------------------------------------------------
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<OrdreDeMission> findById(@PathVariable int id);
+    public OrdreDeMissionDto findById(@PathVariable Integer id);
 //--------------------------------------------------------------------------------------------------------------
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Enregistrement d'un ordre de mission ",
             responses={@ApiResponse(responseCode="200",description ="save ordre de mission avec succés ! "),
                        @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public OrdreDeMission save(@RequestBody OrdreDeMission ordreDeMission);
+    public OrdreDeMissionDto save(@RequestBody OrdreDeMissionDto ordreDeMissionDto);
 //--------------------------------------------------------------------------------------------------------------
    /*
     @DeleteMapping(value = "/{id}")

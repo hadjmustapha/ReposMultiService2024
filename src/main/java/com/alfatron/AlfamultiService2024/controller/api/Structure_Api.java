@@ -1,5 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
+import com.alfatron.AlfamultiService2024.dto.StructureDto;
 import com.alfatron.AlfamultiService2024.model.Structure;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -17,8 +18,8 @@ public interface Structure_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<Structure> findAll();
+    public List<StructureDto> findAll();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Structure> findById(@PathVariable int id);
+    public StructureDto findById(@PathVariable Integer id);
 }

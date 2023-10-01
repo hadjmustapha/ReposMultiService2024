@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class EmployeeDto {
 
-    int id;
+    Integer id;
 
     String nomComplet;
 }

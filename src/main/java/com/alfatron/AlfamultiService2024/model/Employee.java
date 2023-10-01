@@ -26,7 +26,7 @@ public class Employee {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Integer id;
 
     @Column(name="MATRICULE")
     Integer matricule;

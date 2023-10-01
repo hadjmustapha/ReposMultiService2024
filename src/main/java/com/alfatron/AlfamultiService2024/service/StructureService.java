@@ -1,5 +1,6 @@
-package com.alfatron.AlfamultiService2024.controller.service;
+package com.alfatron.AlfamultiService2024.service;
 
+import com.alfatron.AlfamultiService2024.dto.StructureDto;
 import com.alfatron.AlfamultiService2024.model.Structure;
 import com.alfatron.AlfamultiService2024.repository.StructureRepository;
 import lombok.AllArgsConstructor;
@@ -13,12 +14,14 @@ import java.util.Optional;
 public class StructureService {
 
     private StructureRepository structureRepository;
-
-    public List<Structure> findAll(){
+/*
+    public List<StructureDto> findAll(){
         return structureRepository.findAll();
     }
 
-    public Optional<Structure> findById(int id){
+    public StructureDto findById(Integer id){
         return structureRepository.findById(id);
     }
+
+ */
 }

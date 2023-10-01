@@ -1,8 +1,9 @@
 package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.Fournisseur_Api;
+import com.alfatron.AlfamultiService2024.dto.FournisseurDto;
 import com.alfatron.AlfamultiService2024.model.Fournisseur;
-import com.alfatron.AlfamultiService2024.controller.service.FournisseurService;
+import com.alfatron.AlfamultiService2024.service.FournisseurService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +20,11 @@ public class FournisseurController implements Fournisseur_Api {
 
     private FournisseurService fournisseurService;
 
-    public List<Fournisseur> findAll() {
+    public List<FournisseurDto> findAll() {
         return fournisseurService.findAll();
     }
 
-    public Optional<Fournisseur> findById(int id) {
+    public FournisseurDto findById(Integer id) {
         return fournisseurService.findById(id);
     }
 }
