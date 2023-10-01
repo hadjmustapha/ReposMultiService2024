@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class TypeDeTransportDto {
 
-    int id;
+    Integer id;
 
     String libelle;
 }

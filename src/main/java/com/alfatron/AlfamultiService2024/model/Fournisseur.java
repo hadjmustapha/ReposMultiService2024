@@ -24,7 +24,7 @@ public class Fournisseur {
     @Id
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    Integer id;
 
     @Column(name="REFERENCE",length = 50)
     String references;

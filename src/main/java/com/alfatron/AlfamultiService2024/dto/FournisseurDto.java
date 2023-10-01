@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class FournisseurDto {
 
-    int id;
+    Integer id;
 
     String raisonSociale;
 }

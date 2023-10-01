@@ -1,8 +1,9 @@
 package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.TypeDeTransport_Api;
+import com.alfatron.AlfamultiService2024.dto.TypeDeTransportDto;
 import com.alfatron.AlfamultiService2024.model.TypeDeTransport;
-import com.alfatron.AlfamultiService2024.controller.service.TypeDeTransportService;
+import com.alfatron.AlfamultiService2024.service.TypeDeTransportService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +20,11 @@ public class TypeDeTransportController implements TypeDeTransport_Api {
 
     private TypeDeTransportService typeDeTransportService;
 
-    public List<TypeDeTransport> findAll() {
-        return typeDeTransportService.findAll();
+    public List<TypeDeTransportDto> findAll() {
+        return null;//typeDeTransportService.findAll();
     }
 
-    public Optional<TypeDeTransport> findById(int id) {
-        return typeDeTransportService.findById(id);
+    public TypeDeTransportDto findById(Integer id) {
+        return null;//typeDeTransportService.findById(id);
     }
 }

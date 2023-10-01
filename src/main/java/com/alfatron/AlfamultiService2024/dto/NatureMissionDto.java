@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class NatureMissionDto {
 
-    int id;
+    Integer id;
 
     String libelle;
 }

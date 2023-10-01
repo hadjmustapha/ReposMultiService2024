@@ -1,8 +1,9 @@
 package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.Vehicule_Api;
+import com.alfatron.AlfamultiService2024.dto.VehiculeDto;
 import com.alfatron.AlfamultiService2024.model.Vehicule;
-import com.alfatron.AlfamultiService2024.controller.service.VehiculeService;
+import com.alfatron.AlfamultiService2024.service.VehiculeService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,12 +20,12 @@ public class VehiculeController implements Vehicule_Api {
 
     private VehiculeService vehiculeService;
 
-    public List<Vehicule> findAll() {
-        return vehiculeService.findAll();
+    public List<VehiculeDto> findAll() {
+        return null;//vehiculeService.findAll();
     }
 
-    public Optional<Vehicule> findById(int id) {
-        return vehiculeService.findById(id);
+    public VehiculeDto findById(Integer id) {
+        return null;//vehiculeService.findById(id);
     }
 
 }

@@ -15,10 +15,10 @@ public class UtilisateurRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    int id;
+    Integer id;
 
     @Column(name = "ID_LOGIN")
-    int idLogin;
+    Integer idLogin;
 
     @Column(name = "PROFIL",length = 10)
     String profil;

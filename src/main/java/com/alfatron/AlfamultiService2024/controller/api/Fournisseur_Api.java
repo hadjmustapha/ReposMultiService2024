@@ -1,5 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
+import com.alfatron.AlfamultiService2024.dto.FournisseurDto;
 import com.alfatron.AlfamultiService2024.model.Fournisseur;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -17,9 +18,9 @@ public interface Fournisseur_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<Fournisseur> findAll();
+    public List<FournisseurDto> findAll();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Fournisseur> findById(@PathVariable int id);
+    public FournisseurDto findById(@PathVariable Integer id);
 
 }

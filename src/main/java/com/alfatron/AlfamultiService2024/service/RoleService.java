@@ -1,4 +1,4 @@
-package com.alfatron.AlfamultiService2024.controller.service;
+package com.alfatron.AlfamultiService2024.service;
 
 import com.alfatron.AlfamultiService2024.model.Role;
 import com.alfatron.AlfamultiService2024.repository.RoleRepository;

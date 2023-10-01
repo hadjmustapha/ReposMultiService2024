@@ -22,7 +22,7 @@ public class NatureMission{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    int id;
+    Integer id;
 
     @Column(name = "LIBELLE", length = 100)
     String libelle;

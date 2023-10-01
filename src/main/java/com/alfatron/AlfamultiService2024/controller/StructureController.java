@@ -1,8 +1,9 @@
 package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.Structure_Api;
+import com.alfatron.AlfamultiService2024.dto.StructureDto;
 import com.alfatron.AlfamultiService2024.model.Structure;
-import com.alfatron.AlfamultiService2024.controller.service.StructureService;
+import com.alfatron.AlfamultiService2024.service.StructureService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +20,11 @@ public class StructureController implements Structure_Api {
 
     private StructureService structureService;
 
-    public List<Structure> findAll() {
-        return structureService.findAll();
+    public List<StructureDto> findAll() {
+        return null;//structureService.findAll();
     }
 
-    public Optional<Structure> findById(int id) {
-        return structureService.findById(id);
+    public StructureDto findById(Integer id) {
+        return null;//structureService.findById(id);
     }
 }

@@ -1,4 +1,4 @@
-package com.alfatron.AlfamultiService2024.controller.service;
+package com.alfatron.AlfamultiService2024.service;
 
 import com.alfatron.AlfamultiService2024.dto.TypeDeTransportDto;
 import com.alfatron.AlfamultiService2024.model.TypeDeTransport;
@@ -14,12 +14,14 @@ import java.util.Optional;
 public class TypeDeTransportService {
 
     private TypeDeTransportRepository typeDeTransportRepository;
-
-    public List<TypeDeTransport> findAll(){
+/*
+    public List<TypeDeTransportDto> findAll(){
         return typeDeTransportRepository.findAll();
     }
 
-    public Optional<TypeDeTransport> findById(int id) {
+    public TypeDeTransportDto findById(int id) {
        return typeDeTransportRepository.findById(id);
     }
+
+ */
 }

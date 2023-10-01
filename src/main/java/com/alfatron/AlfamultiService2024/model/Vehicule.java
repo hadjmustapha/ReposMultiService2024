@@ -23,7 +23,7 @@ public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    int id ;
+    Integer id ;
 
     @Column(name="CODE",length = 100)
     String code ;

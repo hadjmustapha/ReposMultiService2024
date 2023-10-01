@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class StructureDto {
 
-    int id;
+    Integer id;
 
     String libelle;
 }

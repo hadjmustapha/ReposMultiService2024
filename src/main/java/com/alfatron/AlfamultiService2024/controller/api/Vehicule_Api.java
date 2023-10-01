@@ -1,5 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
+import com.alfatron.AlfamultiService2024.dto.VehiculeDto;
 import com.alfatron.AlfamultiService2024.model.Vehicule;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -17,8 +18,8 @@ public interface Vehicule_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<Vehicule> findAll();
+    public List<VehiculeDto> findAll();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public Optional<Vehicule> findById(@PathVariable int id);
+    public VehiculeDto findById(@PathVariable Integer id);
 }

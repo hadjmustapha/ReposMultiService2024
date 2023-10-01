@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class VehiculeDto {
 
-    int id;
+    Integer id;
 
     String libelle;
 }

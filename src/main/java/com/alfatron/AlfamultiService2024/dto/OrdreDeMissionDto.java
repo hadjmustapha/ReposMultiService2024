@@ -10,7 +10,7 @@ import java.sql.Date;
 @Setter
 public class OrdreDeMissionDto {
 
-    int id;
+    Integer id;
 
     Date dateOrdreDeMission;
 

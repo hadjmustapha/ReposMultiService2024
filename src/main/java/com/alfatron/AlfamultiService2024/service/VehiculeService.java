@@ -1,5 +1,6 @@
-package com.alfatron.AlfamultiService2024.controller.service;
+package com.alfatron.AlfamultiService2024.service;
 
+import com.alfatron.AlfamultiService2024.dto.VehiculeDto;
 import com.alfatron.AlfamultiService2024.model.Vehicule;
 import com.alfatron.AlfamultiService2024.repository.VehiculeRepository;
 import lombok.AllArgsConstructor;
@@ -13,12 +14,14 @@ import java.util.Optional;
 public class VehiculeService {
 
     private VehiculeRepository vehiculeRepository;
-
-    public List<Vehicule> findAll(){
+/*
+    public List<VehiculeDto> findAll(){
         return vehiculeRepository.findAll();
     }
 
-    public Optional<Vehicule> findById(int id) {
+    public VehiculeDto findById(int id) {
         return vehiculeRepository.findById(id);
     }
+
+ */
 }

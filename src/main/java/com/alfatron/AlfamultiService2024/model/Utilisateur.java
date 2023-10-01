@@ -15,7 +15,7 @@ public class Utilisateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    int id;
+    Integer id;
 
     @Column(name = "USERNAME", length = 100)
     String username;
@@ -24,10 +24,10 @@ public class Utilisateur {
     String password;
 
     @Column(name = "ID_EMPLOYEE")
-    int idEmployee;
+    Integer idEmployee;
 
     @Column(name = "ID_PDV")
-    int idPdv;
+    Integer idPdv;
 
 
 }
