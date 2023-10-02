@@ -21,17 +21,17 @@ public class OrdreDeMissionController implements OrdreDeMission_Api {
 
     private OrdreDeMissionService ordreDeMissionService;
 
-    public List<OrdreDeMissionDto> findAll() {
-        return ordreDeMissionService.findAll();
+    public List<OrdreDeMissionDto> findAllOrdreDeMissions() {
+        return ordreDeMissionService.findAllOrdreDeMission();
     }
 
-    public OrdreDeMissionDto findById(Integer id) {
-        return ordreDeMissionService.findById(id);
+    public OrdreDeMissionDto findOrdreDeMissionById(Integer id) {
+        return ordreDeMissionService.findOrdreDeMissionById(id);
     }
 
     @Transactional
-    public OrdreDeMissionDto save(OrdreDeMissionDto ordreDeMissionDto) {
-        return ordreDeMissionService.save(ordreDeMissionDto);
+    public OrdreDeMissionDto saveOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto) {
+        return ordreDeMissionService.saveOrdreDeMission(ordreDeMissionDto);
     }
 
 

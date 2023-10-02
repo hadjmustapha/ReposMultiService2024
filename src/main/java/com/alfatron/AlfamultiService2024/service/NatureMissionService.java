@@ -23,7 +23,7 @@ public class NatureMissionService {
     NatureMissionRepository natureMissionRepository;
     private NatureMissionMapper NatureMissionmapper;
 
-    public List<NatureMissionDto> findAll(){
+    public List<NatureMissionDto> findAllNatureDeMissions(){
         return natureMissionRepository.findAll().stream()
                 .map(NatureMissionmapper::toNatureMissionDto)
                 .collect(Collectors.toList());

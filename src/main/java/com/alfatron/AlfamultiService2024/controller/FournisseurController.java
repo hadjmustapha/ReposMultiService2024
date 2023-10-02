@@ -20,11 +20,11 @@ public class FournisseurController implements Fournisseur_Api {
 
     private FournisseurService fournisseurService;
 
-    public List<FournisseurDto> findAll() {
-        return fournisseurService.findAll();
+    public List<FournisseurDto> findAllFournisseurs() {
+        return fournisseurService.findAllFournisseurs();
     }
 
-    public FournisseurDto findById(Integer id) {
-        return fournisseurService.findById(id);
+    public FournisseurDto findFournisseurById(Integer id) {
+        return fournisseurService.findFournisseurById(id);
     }
 }

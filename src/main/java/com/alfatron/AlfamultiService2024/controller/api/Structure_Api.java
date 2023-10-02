@@ -18,8 +18,8 @@ public interface Structure_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<StructureDto> findAll();
+    public List<StructureDto> findAllStructures();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public StructureDto findById(@PathVariable Integer id);
+    public StructureDto findStructureById(@PathVariable Integer id);
 }

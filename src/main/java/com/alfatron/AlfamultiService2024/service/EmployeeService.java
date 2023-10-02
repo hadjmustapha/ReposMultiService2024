@@ -22,15 +22,15 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
     private EmployeeMapper employeeMapper;
 
-    public List<EmployeeDto> findAll(){
+    public List<EmployeeDto> findAllEmployees(){
         return employeeRepository.findAll().stream().
                 map(employeeMapper::toEmployeeDto).
                 collect(Collectors.toList());
     }
 
-    public EmployeeDto findById(Integer id) {
+    public EmployeeDto findEmployeeById(Integer id) {
         if (id == null) {
-            log.error("Nature ID is null");
+            log.error("Employee ID is null");
             return null;
         }
 

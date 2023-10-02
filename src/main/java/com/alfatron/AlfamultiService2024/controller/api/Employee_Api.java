@@ -18,8 +18,8 @@ public interface Employee_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<EmployeeDto> findAll();
+    public List<EmployeeDto> findAllEmployees();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public EmployeeDto findById(@PathVariable Integer id);
+    public EmployeeDto findEmployeeById(@PathVariable Integer id);
 }

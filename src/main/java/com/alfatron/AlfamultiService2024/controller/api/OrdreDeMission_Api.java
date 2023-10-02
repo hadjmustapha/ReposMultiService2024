@@ -20,18 +20,18 @@ public interface OrdreDeMission_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                       @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<OrdreDeMissionDto> findAll();
+    public List<OrdreDeMissionDto> findAllOrdreDeMissions();
 
 //--------------------------------------------------------------------------------------------------------------
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public OrdreDeMissionDto findById(@PathVariable Integer id);
+    public OrdreDeMissionDto findOrdreDeMissionById(@PathVariable Integer id);
 //--------------------------------------------------------------------------------------------------------------
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Enregistrement d'un ordre de mission ",
             responses={@ApiResponse(responseCode="200",description ="save ordre de mission avec succés ! "),
                        @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public OrdreDeMissionDto save(@RequestBody OrdreDeMissionDto ordreDeMissionDto);
+    public OrdreDeMissionDto saveOrdreDeMission(@RequestBody OrdreDeMissionDto ordreDeMissionDto);
 //--------------------------------------------------------------------------------------------------------------
    /*
     @DeleteMapping(value = "/{id}")

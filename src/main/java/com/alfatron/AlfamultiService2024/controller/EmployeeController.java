@@ -19,11 +19,11 @@ public class EmployeeController implements Employee_Api {
 
     private EmployeeService employeeService;
 
-    public List<EmployeeDto> findAll() {
-        return employeeService.findAll();
+    public List<EmployeeDto> findAllEmployees() {
+        return employeeService.findAllEmployees();
     }
 
-    public EmployeeDto findById(Integer id) {
-        return employeeService.findById(id);
+    public EmployeeDto findEmployeeById(Integer id) {
+        return employeeService.findEmployeeById(id);
     }
 }

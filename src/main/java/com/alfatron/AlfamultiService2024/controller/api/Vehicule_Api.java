@@ -18,8 +18,8 @@ public interface Vehicule_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<VehiculeDto> findAll();
+    public List<VehiculeDto> findAllVehicules();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public VehiculeDto findById(@PathVariable Integer id);
+    public VehiculeDto findVehiculeById(@PathVariable Integer id);
 }

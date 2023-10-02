@@ -24,8 +24,8 @@ public class NatureMissionController implements NatureMission_Api {
 
     private NatureMissionService natureMissionService;
 
-    public List<NatureMissionDto> findAll(){
-        return natureMissionService.findAll();
+    public List<NatureMissionDto> findAllNatureDeMissions(){
+        return natureMissionService.findAllNatureDeMissions();
     }
 
     public NatureMissionDto findNatureMissionById(Integer id) {

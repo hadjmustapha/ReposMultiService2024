@@ -24,7 +24,7 @@ public interface NatureMission_Api {
                responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                           @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
                          })
-    public List<NatureMissionDto> findAll();
+    public List<NatureMissionDto> findAllNatureDeMissions();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
     public NatureMissionDto findNatureMissionById(@PathVariable Integer id);

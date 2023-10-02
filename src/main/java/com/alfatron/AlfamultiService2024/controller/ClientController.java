@@ -21,13 +21,13 @@ public class ClientController implements Client_Api {
     private ClientService clientService;
     private ClientMapper clientMapper;
 
-    public List<ClientDto> findAll() {
-        return clientService.findAll();
+    public List<ClientDto> findAllClients() {
+        return clientService.findAllClients();
     }
 
 
-    public ClientDto findById(Integer id) {
-        return clientService.findById(id);
+    public ClientDto findClientById(Integer id) {
+        return clientService.findClientById(id);
     }
 
 
