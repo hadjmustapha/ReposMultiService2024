@@ -20,11 +20,11 @@ public class TypeDeTransportController implements TypeDeTransport_Api {
 
     private TypeDeTransportService typeDeTransportService;
 
-    public List<TypeDeTransportDto> findAll() {
-        return null;//typeDeTransportService.findAll();
+    public List<TypeDeTransportDto> findAllTypeDeTransports() {
+        return typeDeTransportService.findAllTypeDeTransports();
     }
 
-    public TypeDeTransportDto findById(Integer id) {
-        return null;//typeDeTransportService.findById(id);
+    public TypeDeTransportDto findTypeDeTransportById(Integer id) {
+        return typeDeTransportService.findTypeDeTransportById(id);
     }
 }

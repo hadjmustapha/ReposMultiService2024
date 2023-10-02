@@ -18,9 +18,9 @@ public interface Fournisseur_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<FournisseurDto> findAll();
+    public List<FournisseurDto> findAllFournisseurs();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public FournisseurDto findById(@PathVariable Integer id);
+    public FournisseurDto findFournisseurById(@PathVariable Integer id);
 
 }

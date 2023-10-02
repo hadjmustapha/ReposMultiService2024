@@ -18,8 +18,8 @@ public interface TypeDeTransport_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<TypeDeTransportDto> findAll();
+    public List<TypeDeTransportDto> findAllTypeDeTransports();
 
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public TypeDeTransportDto findById(@PathVariable Integer id);
+    public TypeDeTransportDto findTypeDeTransportById(@PathVariable Integer id);
 }

@@ -20,7 +20,7 @@ public class ClientService {
     private ClientRepository clientRepository;
     private ClientMapper clientMapper;
 
-    public List<ClientDto> findAll(){
+    public List<ClientDto> findAllClients(){
         return clientRepository.findAll().stream()
                 .map(clientMapper::toClientDto)
                 .collect(Collectors.toList());
@@ -28,10 +28,10 @@ public class ClientService {
 
 
 
-    public ClientDto findById(Integer id) {
+    public ClientDto findClientById(Integer id) {
         //---- must return client Dto
         if (id == null) {
-            log.error("Nature ID is null");
+            log.error("Client ID is null");
             return null;
         }
        return clientRepository.findById(id)

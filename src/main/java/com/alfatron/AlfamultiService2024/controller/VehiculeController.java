@@ -20,12 +20,12 @@ public class VehiculeController implements Vehicule_Api {
 
     private VehiculeService vehiculeService;
 
-    public List<VehiculeDto> findAll() {
-        return null;//vehiculeService.findAll();
+    public List<VehiculeDto> findAllVehicules() {
+        return vehiculeService.findAllVehicules();
     }
 
-    public VehiculeDto findById(Integer id) {
-        return null;//vehiculeService.findById(id);
+    public VehiculeDto findVehiculeById(Integer id) {
+        return vehiculeService.findVehiculeById(id);
     }
 
 }

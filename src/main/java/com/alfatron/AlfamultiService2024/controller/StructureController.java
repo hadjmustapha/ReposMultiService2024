@@ -20,11 +20,11 @@ public class StructureController implements Structure_Api {
 
     private StructureService structureService;
 
-    public List<StructureDto> findAll() {
-        return null;//structureService.findAll();
+    public List<StructureDto> findAllStructures() {
+        return structureService.findAllStructures();
     }
 
-    public StructureDto findById(Integer id) {
-        return null;//structureService.findById(id);
+    public StructureDto findStructureById(Integer id) {
+        return structureService.findStructureById(id);
     }
 }

@@ -27,19 +27,24 @@ public class OrdreDeMissionService {
     private OrdreDeMissionMapper ordreDeMissionMapper;
     private EmployeeService employeeService;
 
-    public List<OrdreDeMissionDto> findAll(){
+    public List<OrdreDeMissionDto> findAllOrdreDeMission(){
         return ordreDeMissionRepository.findAll().stream()
                 .map(ordreDeMissionMapper::toOrdreDeMissionDto)
                 .collect(Collectors.toList());
     }
 
-    public OrdreDeMissionDto findById(int id){
+    public OrdreDeMissionDto findOrdreDeMissionById(Integer id){
+
+        if (id == null) {
+            log.error("Ordre de mission ID is null");
+            return null;
+        }
           return ordreDeMissionRepository.findById(id).
                   map(ordreDeMissionMapper::toOrdreDeMissionDto)
                   .orElseThrow(()->new EntityNotFoundException("Impossible de trouvé un ordre de mission avec id : "+id, ErrorCodes.ORDRE_DE_MISSION_NOT_FOUND));
     }
 
-    public OrdreDeMissionDto save(OrdreDeMissionDto ordreDeMissionDto){
+    public OrdreDeMissionDto saveOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto){
         //validation des données en input
         if (ordreDeMissionDto.getId() == null) {
             ordreDeMissionDto.setId(0);

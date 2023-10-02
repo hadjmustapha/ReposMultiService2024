@@ -20,10 +20,10 @@ public interface Client_Api {
             responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                     @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
             })
-    public List<ClientDto> findAll();
+    public List<ClientDto> findAllClients();
 
     //,
     @GetMapping(value="/{id}",produces= MediaType.APPLICATION_JSON_VALUE)
-    public ClientDto findById(@PathVariable Integer id);
+    public ClientDto findClientById(@PathVariable Integer id);
 
 }
