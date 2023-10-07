@@ -1,7 +1,7 @@
 package com.alfatron.AlfamultiService2024.service;
 
 import com.alfatron.AlfamultiService2024.dto.ClientDto;
-import com.alfatron.AlfamultiService2024.exception.EntityNotFoundException;
+import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.ClientMapper;
 import com.alfatron.AlfamultiService2024.repository.ClientRepository;
@@ -36,7 +36,7 @@ public class ClientService {
         }
        return clientRepository.findById(id)
                .map(clientMapper::toClientDto)
-               .orElseThrow(()-> new EntityNotFoundException("Aucun client trouvé avec id : "+id ,ErrorCodes.CLIENT_NOT_FOUND));
+               .orElseThrow(()-> new Custom_EntityNotFoundException("Aucun client trouvé avec id : "+id ,ErrorCodes.CLIENT_NOT_FOUND));
 
     }
 

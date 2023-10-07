@@ -1,22 +1,18 @@
 package com.alfatron.AlfamultiService2024.service;
 
 import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
-import com.alfatron.AlfamultiService2024.exception.EntityNotFoundException;
+import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
+import com.alfatron.AlfamultiService2024.exception.Custom_InvalidEntityException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.OrdreDeMissionMapper;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.repository.OrdreDeMissionRepository;
+import com.alfatron.AlfamultiService2024.validator.OrdreDeMissionValidator;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.function.EntityResponse;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static java.util.Optional.of;
 
 @Service
 @AllArgsConstructor
@@ -26,6 +22,7 @@ public class OrdreDeMissionService {
     private OrdreDeMissionRepository ordreDeMissionRepository;
     private OrdreDeMissionMapper ordreDeMissionMapper;
     private EmployeeService employeeService;
+    private OrdreDeMissionValidator ordreDeMissionValidator;
 
     public List<OrdreDeMissionDto> findAllOrdreDeMission(){
         return ordreDeMissionRepository.findAll().stream()
@@ -41,7 +38,7 @@ public class OrdreDeMissionService {
         }
           return ordreDeMissionRepository.findById(id).
                   map(ordreDeMissionMapper::toOrdreDeMissionDto)
-                  .orElseThrow(()->new EntityNotFoundException("Impossible de trouvé un ordre de mission avec id : "+id, ErrorCodes.ORDRE_DE_MISSION_NOT_FOUND));
+                  .orElseThrow(()->new Custom_EntityNotFoundException("Impossible de trouvé un ordre de mission avec id : "+id, ErrorCodes.ORDRE_DE_MISSION_NOT_FOUND));
     }
 
     public OrdreDeMissionDto saveOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto){
@@ -49,7 +46,14 @@ public class OrdreDeMissionService {
         if (ordreDeMissionDto.getId() == null) {
             ordreDeMissionDto.setId(0);
         }
+        List<String> errors = ordreDeMissionValidator.validateOrdreDeMission(ordreDeMissionDto);
+        if (!errors.isEmpty()) {
+            log.error("ODM is not valid ", ordreDeMissionDto);
+            throw new Custom_InvalidEntityException("ODM is not valid",ErrorCodes.ORDRE_DE_MISSION_NOT_VALID,errors);
+        }
+
         //conversion dto en entité  --> puis reconversion à nouveau entity en dto
+
         return ordreDeMissionMapper.toOrdreDeMissionDto(ordreDeMissionRepository.save(ordreDeMissionMapper.toOrdreDeMission(ordreDeMissionDto)));
     };
 

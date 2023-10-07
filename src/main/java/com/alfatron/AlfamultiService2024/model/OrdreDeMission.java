@@ -31,8 +31,8 @@ public class OrdreDeMission {
     @Column(name="NB_JR")
     Integer nombreDeJours;
 
-    @ManyToOne(cascade ={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-    @JoinColumn(name = "ID_EMP")
+    @ManyToOne()
+    @JoinColumn(name="ID_EMP")
     Employee employee;
 
     @Column(name="REFERENCE", length = 200)
@@ -88,7 +88,7 @@ public class OrdreDeMission {
     @Column(name="EDITED_BY")
     Integer editedBy;// toRelation
 
-    @ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @ManyToOne()
     @JoinColumn(name="TRANSPORT")
     TypeDeTransport typeDeTransport;
 
