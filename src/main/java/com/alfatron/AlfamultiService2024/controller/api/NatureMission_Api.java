@@ -19,7 +19,7 @@ import java.util.Optional;
 
 public interface NatureMission_Api {
 
-    @GetMapping(value="/RecupAll",produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(produces= MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Recupération des natures de missions",
                responses={@ApiResponse(responseCode="200",description ="récupération Data avec succés ! "),
                           @ApiResponse (responseCode="400",description="Mauvaise requête  ! ")
