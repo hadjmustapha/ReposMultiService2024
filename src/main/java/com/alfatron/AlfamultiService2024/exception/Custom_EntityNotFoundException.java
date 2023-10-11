@@ -1,11 +1,14 @@
 package com.alfatron.AlfamultiService2024.exception;
 
-import lombok.Getter;
 
 public class Custom_EntityNotFoundException extends RuntimeException{
 
-    @Getter
+
     private ErrorCodes errorCode;
+
+    public ErrorCodes getErrorCode() {
+        return errorCode;
+    }
 
     public Custom_EntityNotFoundException(String message) {
         super(message);

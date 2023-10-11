@@ -4,6 +4,7 @@ import com.alfatron.AlfamultiService2024.controller.api.NatureMission_Api;
 import com.alfatron.AlfamultiService2024.dto.NatureMissionDto;
 import com.alfatron.AlfamultiService2024.service.NatureMissionService;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,10 +14,14 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/NatureDeMission")
-@AllArgsConstructor
+@CrossOrigin
 public class NatureMissionController implements NatureMission_Api {
 
     private NatureMissionService natureMissionService;
+
+    public NatureMissionController(NatureMissionService natureMissionService) {
+        this.natureMissionService = natureMissionService;
+    }
 
     public List<NatureMissionDto> findAllNatureDeMissions(){
         return natureMissionService.findAllNatureDeMissions();

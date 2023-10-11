@@ -1,16 +1,22 @@
 package com.alfatron.AlfamultiService2024.exception;
 
-import lombok.Getter;
+
 
 import java.util.List;
 
 public class InvalidEntityException extends RuntimeException{
 
-    @Getter
     private ErrorCodes errorCode;
 
-    @Getter
     private List<String> errors;
+
+    public ErrorCodes getErrorCode() {
+        return errorCode;
+    }
+
+    public List<String> getErrors() {
+        return errors;
+    }
 
     public InvalidEntityException(String message) {
         super(message);

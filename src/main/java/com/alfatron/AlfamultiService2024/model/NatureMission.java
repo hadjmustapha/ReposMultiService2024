@@ -13,10 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "RH_NATURE_ODM")
-@Getter
-@Setter
-@NoArgsConstructor
-@DynamicUpdate
 public class NatureMission{
 
     @Id
@@ -34,17 +30,41 @@ public class NatureMission{
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions= new ArrayList<>();
 
-    @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
-        ordresDeMissions.add(odm);
-        odm.setNatureMission(this);
+    public NatureMission() {
     }
 
-    @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
-        ordresDeMissions.remove(odm);
-        odm.setNatureMission(null);
+    public Integer getId() {
+        return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Integer getCompte6() {
+        return compte6;
+    }
+
+    public void setCompte6(Integer compte6) {
+        this.compte6 = compte6;
+    }
+
+    public List<OrdreDeMission> getOrdresDeMissions() {
+        return ordresDeMissions;
+    }
+
+    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+        this.ordresDeMissions = ordresDeMissions;
+    }
+
 
 
 }

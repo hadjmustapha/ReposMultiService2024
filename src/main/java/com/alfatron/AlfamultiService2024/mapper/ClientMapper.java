@@ -9,12 +9,7 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface ClientMapper {
 
-    //map from entity to dto
-    @Mapping(source = "raisonSociale",target = "raisonSociale")
     ClientDto toClientDto(Client client);
 
-    //map from dto to entity
-    @Mapping(source = "raisonSociale",target = "raisonSociale")
     Client toClient(ClientDto clientDto);
-
 }

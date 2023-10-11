@@ -9,11 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class RoleService {
 
     private RoleRepository roleRepository;
+
+    public RoleService(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
 
     public List<Role> findAllRoles(){
         return roleRepository.findAll();

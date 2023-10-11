@@ -13,9 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORG_STRUCTURE")
-@Getter
-@Setter
-@NoArgsConstructor
 public class Structure {
 
     @Id
@@ -36,15 +33,48 @@ public class Structure {
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
-    @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
-        ordresDeMissions.add(odm);
-        odm.setStructure(this);
+    public Structure() {
     }
 
-    @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
-        odm.setStructure(null);
-        ordresDeMissions.remove(odm);
+    public Integer getId() {
+        return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Integer getIdParent() {
+        return idParent;
+    }
+
+    public void setIdParent(Integer idParent) {
+        this.idParent = idParent;
+    }
+
+    public Integer getIdImage() {
+        return idImage;
+    }
+
+    public void setIdImage(Integer idImage) {
+        this.idImage = idImage;
+    }
+
+    public List<OrdreDeMission> getOrdresDeMissions() {
+        return ordresDeMissions;
+    }
+
+    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+        this.ordresDeMissions = ordresDeMissions;
+    }
+
+
 }

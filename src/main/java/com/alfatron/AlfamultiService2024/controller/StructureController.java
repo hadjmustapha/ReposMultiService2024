@@ -5,6 +5,7 @@ import com.alfatron.AlfamultiService2024.dto.StructureDto;
 import com.alfatron.AlfamultiService2024.model.Structure;
 import com.alfatron.AlfamultiService2024.service.StructureService;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +16,14 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/Structure")
-@AllArgsConstructor
+@CrossOrigin
 public class StructureController implements Structure_Api {
 
     private StructureService structureService;
+
+    public StructureController(StructureService structureService) {
+        this.structureService = structureService;
+    }
 
     public List<StructureDto> findAllStructures() {
         return structureService.findAllStructures();

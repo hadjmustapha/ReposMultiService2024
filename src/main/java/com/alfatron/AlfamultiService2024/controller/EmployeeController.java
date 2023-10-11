@@ -5,6 +5,7 @@ import com.alfatron.AlfamultiService2024.dto.EmployeeDto;
 import com.alfatron.AlfamultiService2024.model.Employee;
 import com.alfatron.AlfamultiService2024.service.EmployeeService;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +15,14 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/Employee")
-@AllArgsConstructor
+@CrossOrigin
 public class EmployeeController implements Employee_Api {
 
     private EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     public List<EmployeeDto> findAllEmployees() {
         return employeeService.findAllEmployees();

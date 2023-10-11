@@ -9,11 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class UtilisateurService {
 
     private UtilisateurRepository utilisateurRepository;
+
+    public UtilisateurService(UtilisateurRepository utilisateurRepository) {
+        this.utilisateurRepository = utilisateurRepository;
+    }
 
     public List<Utilisateur> findAllUtilisateurs(){
         return utilisateurRepository.findAll();

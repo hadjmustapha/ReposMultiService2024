@@ -13,12 +13,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class StructureService {
 
     private StructureRepository structureRepository;
     private StructureMapper structureMapper;
+
+    public StructureService(StructureRepository structureRepository, StructureMapper structureMapper) {
+        this.structureRepository = structureRepository;
+        this.structureMapper = structureMapper;
+    }
 
     public List<StructureDto> findAllStructures(){
         return structureRepository.findAll().stream().map(structureMapper::toStructureDto).collect(Collectors.toList());
@@ -26,13 +29,26 @@ public class StructureService {
 
     public StructureDto findStructureById(Integer id){
         if (id == null) {
-            log.error("Structure ID is null");
             return null;
         }
         return structureRepository.findById(id).
                 map(structureMapper::toStructureDto).
                 orElseThrow(()-> new Custom_EntityNotFoundException("Impossible de trouvé un structure avec id : "+id, ErrorCodes.STRUCTURE_NOT_FOUND));
     }
+
+    /*
+   @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setStructure(this);
+    }
+
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setStructure(null);
+        ordresDeMissions.remove(odm);
+    }
+     */
 
 
 }

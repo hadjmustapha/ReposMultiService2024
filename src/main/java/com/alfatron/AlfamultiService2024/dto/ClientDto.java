@@ -5,12 +5,26 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 public class ClientDto {
 
     Integer id;
 
     String raisonSociale;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getRaisonSociale() {
+        return raisonSociale;
+    }
+
+    public void setRaisonSociale(String raisonSociale) {
+        this.raisonSociale = raisonSociale;
+    }
 }

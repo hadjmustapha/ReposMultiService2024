@@ -17,10 +17,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORG_EMPLOYEE")
-@Getter
-@Setter
-@NoArgsConstructor
-@DynamicUpdate
 public class Employee {
 
     @Id
@@ -195,14 +191,448 @@ public class Employee {
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
-    @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
-        ordresDeMissions.add(odm);
-        odm.setEmployee(this);
+    public Employee() {
     }
-    @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
-        odm.setEmployee(null);
-        ordresDeMissions.remove(odm);
+
+    public Integer getId() {
+        return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(Integer matricule) {
+        this.matricule = matricule;
+    }
+
+    public String getCompteAux() {
+        return compteAux;
+    }
+
+    public void setCompteAux(String compteAux) {
+        this.compteAux = compteAux;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public Integer getId_categorie() {
+        return id_categorie;
+    }
+
+    public void setId_categorie(Integer id_categorie) {
+        this.id_categorie = id_categorie;
+    }
+
+    public Integer getIdStructure() {
+        return idStructure;
+    }
+
+    public void setIdStructure(Integer idStructure) {
+        this.idStructure = idStructure;
+    }
+
+    public Integer getIdPoste() {
+        return idPoste;
+    }
+
+    public void setIdPoste(Integer idPoste) {
+        this.idPoste = idPoste;
+    }
+
+    public Date getDateEntree() {
+        return dateEntree;
+    }
+
+    public void setDateEntree(Date dateEntree) {
+        this.dateEntree = dateEntree;
+    }
+
+    public Date getDatePoste() {
+        return datePoste;
+    }
+
+    public void setDatePoste(Date datePoste) {
+        this.datePoste = datePoste;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Boolean getMaintenance() {
+        return maintenance;
+    }
+
+    public void setMaintenance(Boolean maintenance) {
+        this.maintenance = maintenance;
+    }
+
+    public Date getDateDeNaissance() {
+        return dateDeNaissance;
+    }
+
+    public void setDateDeNaissance(Date dateDeNaissance) {
+        this.dateDeNaissance = dateDeNaissance;
+    }
+
+    public String getGroupeSanguin() {
+        return groupeSanguin;
+    }
+
+    public void setGroupeSanguin(String groupeSanguin) {
+        this.groupeSanguin = groupeSanguin;
+    }
+
+    public Integer getIdFamille() {
+        return idFamille;
+    }
+
+    public void setIdFamille(Integer idFamille) {
+        this.idFamille = idFamille;
+    }
+
+    public String getNomPrenom() {
+        return nomPrenom;
+    }
+
+    public void setNomPrenom(String nomPrenom) {
+        this.nomPrenom = nomPrenom;
+    }
+
+    public String getAuxComplet() {
+        return auxComplet;
+    }
+
+    public void setAuxComplet(String auxComplet) {
+        this.auxComplet = auxComplet;
+    }
+
+    public Boolean getBit1() {
+        return bit1;
+    }
+
+    public void setBit1(Boolean bit1) {
+        this.bit1 = bit1;
+    }
+
+    public Boolean getBite2() {
+        return bite2;
+    }
+
+    public void setBite2(Boolean bite2) {
+        this.bite2 = bite2;
+    }
+
+    public Integer getIdPositionGs() {
+        return idPositionGs;
+    }
+
+    public void setIdPositionGs(Integer idPositionGs) {
+        this.idPositionGs = idPositionGs;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Integer getIdContrat() {
+        return idContrat;
+    }
+
+    public void setIdContrat(Integer idContrat) {
+        this.idContrat = idContrat;
+    }
+
+    public String getNumeroSecuriteSociale() {
+        return numeroSecuriteSociale;
+    }
+
+    public void setNumeroSecuriteSociale(String numeroSecuriteSociale) {
+        this.numeroSecuriteSociale = numeroSecuriteSociale;
+    }
+
+    public Integer getIdSecCaisse() {
+        return idSecCaisse;
+    }
+
+    public void setIdSecCaisse(Integer idSecCaisse) {
+        this.idSecCaisse = idSecCaisse;
+    }
+
+    public Integer getModeReglement() {
+        return modeReglement;
+    }
+
+    public void setModeReglement(Integer modeReglement) {
+        this.modeReglement = modeReglement;
+    }
+
+    public String getNumBanque() {
+        return numBanque;
+    }
+
+    public void setNumBanque(String numBanque) {
+        this.numBanque = numBanque;
+    }
+
+    public Integer getIdBanqueEmp() {
+        return idBanqueEmp;
+    }
+
+    public void setIdBanqueEmp(Integer idBanqueEmp) {
+        this.idBanqueEmp = idBanqueEmp;
+    }
+
+    public Integer getIdBanqueEntreprise() {
+        return idBanqueEntreprise;
+    }
+
+    public void setIdBanqueEntreprise(Integer idBanqueEntreprise) {
+        this.idBanqueEntreprise = idBanqueEntreprise;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getCodePostale() {
+        return codePostale;
+    }
+
+    public void setCodePostale(String codePostale) {
+        this.codePostale = codePostale;
+    }
+
+    public String getNomJeuneFille() {
+        return nomJeuneFille;
+    }
+
+    public void setNomJeuneFille(String nomJeuneFille) {
+        this.nomJeuneFille = nomJeuneFille;
+    }
+
+    public Integer getSituationFamillial() {
+        return situationFamillial;
+    }
+
+    public void setSituationFamillial(Integer situationFamillial) {
+        this.situationFamillial = situationFamillial;
+    }
+
+    public Integer getNbEnfant() {
+        return nbEnfant;
+    }
+
+    public void setNbEnfant(Integer nbEnfant) {
+        this.nbEnfant = nbEnfant;
+    }
+
+    public Integer getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(Integer sexe) {
+        this.sexe = sexe;
+    }
+
+    public String getLieuDeNaissance() {
+        return lieuDeNaissance;
+    }
+
+    public void setLieuDeNaissance(String lieuDeNaissance) {
+        this.lieuDeNaissance = lieuDeNaissance;
+    }
+
+    public String getNumeroActDeNaissance() {
+        return numeroActDeNaissance;
+    }
+
+    public void setNumeroActDeNaissance(String numeroActDeNaissance) {
+        this.numeroActDeNaissance = numeroActDeNaissance;
+    }
+
+    public String getCommuneNaissance() {
+        return communeNaissance;
+    }
+
+    public void setCommuneNaissance(String communeNaissance) {
+        this.communeNaissance = communeNaissance;
+    }
+
+    public String getNomPere() {
+        return nomPere;
+    }
+
+    public void setNomPere(String nomPere) {
+        this.nomPere = nomPere;
+    }
+
+    public String getNomMere() {
+        return nomMere;
+    }
+
+    public void setNomMere(String nomMere) {
+        this.nomMere = nomMere;
+    }
+
+    public String getPrenomMere() {
+        return prenomMere;
+    }
+
+    public void setPrenomMere(String prenomMere) {
+        this.prenomMere = prenomMere;
+    }
+
+    public Date getDateMariage() {
+        return dateMariage;
+    }
+
+    public void setDateMariage(Date dateMariage) {
+        this.dateMariage = dateMariage;
+    }
+
+    public String getNomPrenomConjoint() {
+        return nomPrenomConjoint;
+    }
+
+    public void setNomPrenomConjoint(String nomPrenomConjoint) {
+        this.nomPrenomConjoint = nomPrenomConjoint;
+    }
+
+    public Boolean getConjointActive() {
+        return conjointActive;
+    }
+
+    public void setConjointActive(Boolean conjointActive) {
+        this.conjointActive = conjointActive;
+    }
+
+    public String getNumeroCarteNational() {
+        return numeroCarteNational;
+    }
+
+    public void setNumeroCarteNational(String numeroCarteNational) {
+        this.numeroCarteNational = numeroCarteNational;
+    }
+
+    public String getNumeroIdentificationNational() {
+        return numeroIdentificationNational;
+    }
+
+    public void setNumeroIdentificationNational(String numeroIdentificationNational) {
+        this.numeroIdentificationNational = numeroIdentificationNational;
+    }
+
+    public String getNumPc() {
+        return numPc;
+    }
+
+    public void setNumPc(String numPc) {
+        this.numPc = numPc;
+    }
+
+    public String getNumPass() {
+        return numPass;
+    }
+
+    public void setNumPass(String numPass) {
+        this.numPass = numPass;
+    }
+
+    public Boolean getEtrange() {
+        return etrange;
+    }
+
+    public void setEtrange(Boolean etrange) {
+        this.etrange = etrange;
+    }
+
+    public String getCodeNat() {
+        return codeNat;
+    }
+
+    public void setCodeNat(String codeNat) {
+        this.codeNat = codeNat;
+    }
+
+    public Boolean getCoche() {
+        return coche;
+    }
+
+    public void setCoche(Boolean coche) {
+        this.coche = coche;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Integer getUnite() {
+        return unite;
+    }
+
+    public void setUnite(Integer unite) {
+        this.unite = unite;
+    }
+
+    public List<OrdreDeMission> getOrdresDeMissions() {
+        return ordresDeMissions;
+    }
+
+    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+        this.ordresDeMissions = ordresDeMissions;
+    }
+
+
 }

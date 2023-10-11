@@ -1,6 +1,5 @@
 package com.alfatron.AlfamultiService2024.exception;
 
-import com.alfatron.AlfamultiService2024.controller.api.Client_Api;
 
 public enum ErrorCodes {
 

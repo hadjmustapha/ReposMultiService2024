@@ -9,6 +9,5 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/Role")
-@AllArgsConstructor
 public class RoleController implements Role_Api {
 }

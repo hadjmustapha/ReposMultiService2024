@@ -7,9 +7,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "SYS_LOGIN")
-@Getter
-@Setter
-@NoArgsConstructor
 public class Utilisateur {
 
     @Id
@@ -29,5 +26,46 @@ public class Utilisateur {
     @Column(name = "ID_PDV")
     Integer idPdv;
 
+    public Utilisateur() {
+    }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getIdEmployee() {
+        return idEmployee;
+    }
+
+    public void setIdEmployee(Integer idEmployee) {
+        this.idEmployee = idEmployee;
+    }
+
+    public Integer getIdPdv() {
+        return idPdv;
+    }
+
+    public void setIdPdv(Integer idPdv) {
+        this.idPdv = idPdv;
+    }
 }
