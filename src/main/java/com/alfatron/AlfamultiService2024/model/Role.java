@@ -10,9 +10,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "SYS_ROLE")
-@Getter
-@Setter
-@NoArgsConstructor
 public class Role {
 
     @Id
@@ -22,4 +19,22 @@ public class Role {
     @Column(name = "LIBELLE",length = 100)
     String libelle;
 
+    public Role() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
 }

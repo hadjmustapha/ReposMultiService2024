@@ -13,10 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "RH_ODM_TRANSPORT")
-@NoArgsConstructor
-@Getter
-@Setter
-@DynamicUpdate
 public class TypeDeTransport {
 
     @Id
@@ -27,29 +23,38 @@ public class TypeDeTransport {
     @Column(name = "LIBELLE",length = 100)
     String libelle	;
 
-    public TypeDeTransport(String libelle){
-        this.libelle=libelle;
-    }
-
     @OneToMany(mappedBy = "typeDeTransport")
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
-    @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
-        ordresDeMissions.add(odm);
-        odm.setTypeDeTransport(this);
+    public TypeDeTransport() {
     }
 
-    @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
-        odm.setTypeDeTransport(null);
-        ordresDeMissions.remove(odm);
+    public Integer getId() {
+        return id;
     }
 
-    public TypeDeTransport(String libelle, List<OrdreDeMission> ordresDeMissions) {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
         this.libelle = libelle;
+    }
+
+    public List<OrdreDeMission> getOrdresDeMissions() {
+        return ordresDeMissions;
+    }
+
+    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
+
+
+
 
 }

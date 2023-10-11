@@ -10,11 +10,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class UtilisateurRoleService {
 
     private UtilisateurRoleRepository utilisateurRoleRepository;
+
+    public UtilisateurRoleService(UtilisateurRoleRepository utilisateurRoleRepository) {
+        this.utilisateurRoleRepository = utilisateurRoleRepository;
+    }
 
     public List<UtilisateurRole> findAllUtilisateursRoles(){
         return utilisateurRoleRepository.findAll();

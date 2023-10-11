@@ -6,6 +6,7 @@ import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.service.OrdreDeMissionService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,10 +17,14 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/OrdreDeMission")
-@AllArgsConstructor
+@CrossOrigin
 public class OrdreDeMissionController implements OrdreDeMission_Api {
 
     private OrdreDeMissionService ordreDeMissionService;
+
+    public OrdreDeMissionController(OrdreDeMissionService ordreDeMissionService) {
+        this.ordreDeMissionService = ordreDeMissionService;
+    }
 
     public List<OrdreDeMissionDto> findAllOrdreDeMissions() {
         return ordreDeMissionService.findAllOrdreDeMission();

@@ -13,12 +13,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class FournisseurService {
 
     private FournisseurRepository fournisseurRepository;
     private FournisseurMapper fournisseurMapper;
+
+    public FournisseurService(FournisseurRepository fournisseurRepository, FournisseurMapper fournisseurMapper) {
+        this.fournisseurRepository = fournisseurRepository;
+        this.fournisseurMapper = fournisseurMapper;
+    }
 
     public List<FournisseurDto> findAllFournisseurs(){
         return fournisseurRepository.findAll().stream()
@@ -28,7 +31,7 @@ public class FournisseurService {
 
     public FournisseurDto findFournisseurById(Integer id){
         if (id == null) {
-            log.error("Fournisseur ID is null");
+           // log.error("Fournisseur ID is null");
             return null;
         }
 
@@ -36,6 +39,19 @@ public class FournisseurService {
             new Custom_EntityNotFoundException("Impssible de trouvé un fournisseur avec id : "+id, ErrorCodes.FOURNISSEUR_NOT_FOUND)
         );
     }
+
+    /*
+     @Transactional
+    public void addOrdreDeMission(OrdreDeMission odm){
+        ordresDeMissions.add(odm);
+        odm.setFournisseur(this);
+    }
+    @Transactional
+    public void deleteOrdreDeMission(OrdreDeMission odm){
+        odm.setFournisseur(null);
+        ordresDeMissions.remove(odm);
+    }
+     */
 
 
 }

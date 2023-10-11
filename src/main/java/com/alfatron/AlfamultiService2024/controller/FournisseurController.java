@@ -5,6 +5,7 @@ import com.alfatron.AlfamultiService2024.dto.FournisseurDto;
 import com.alfatron.AlfamultiService2024.model.Fournisseur;
 import com.alfatron.AlfamultiService2024.service.FournisseurService;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +16,14 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
 @RestController
 @RequestMapping(APP_ROOT+"/Fournisseur")
-@AllArgsConstructor
+@CrossOrigin
 public class FournisseurController implements Fournisseur_Api {
 
     private FournisseurService fournisseurService;
+
+    public FournisseurController(FournisseurService fournisseurService) {
+        this.fournisseurService = fournisseurService;
+    }
 
     public List<FournisseurDto> findAllFournisseurs() {
         return fournisseurService.findAllFournisseurs();

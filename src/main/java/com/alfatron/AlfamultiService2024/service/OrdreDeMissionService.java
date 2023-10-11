@@ -15,14 +15,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@Slf4j
 public class OrdreDeMissionService {
 
     private OrdreDeMissionRepository ordreDeMissionRepository;
     private OrdreDeMissionMapper ordreDeMissionMapper;
     private EmployeeService employeeService;
     private OrdreDeMissionValidator ordreDeMissionValidator;
+
+    public OrdreDeMissionService(OrdreDeMissionRepository ordreDeMissionRepository, OrdreDeMissionMapper ordreDeMissionMapper, EmployeeService employeeService, OrdreDeMissionValidator ordreDeMissionValidator) {
+        this.ordreDeMissionRepository = ordreDeMissionRepository;
+        this.ordreDeMissionMapper = ordreDeMissionMapper;
+        this.employeeService = employeeService;
+        this.ordreDeMissionValidator = ordreDeMissionValidator;
+    }
 
     public List<OrdreDeMissionDto> findAllOrdreDeMission(){
         return ordreDeMissionRepository.findAll().stream()
@@ -33,7 +38,7 @@ public class OrdreDeMissionService {
     public OrdreDeMissionDto findOrdreDeMissionById(Integer id){
 
         if (id == null) {
-            log.error("Ordre de mission ID is null");
+            //log.error("Ordre de mission ID is null");
             return null;
         }
           return ordreDeMissionRepository.findById(id).
@@ -48,7 +53,7 @@ public class OrdreDeMissionService {
         }
         List<String> errors = ordreDeMissionValidator.validateOrdreDeMission(ordreDeMissionDto);
         if (!errors.isEmpty()) {
-            log.error("ODM is not valid ", ordreDeMissionDto);
+            //log.error("ODM is not valid ", ordreDeMissionDto);
             throw new Custom_InvalidEntityException("ODM is not valid",ErrorCodes.ORDRE_DE_MISSION_NOT_VALID,errors);
         }
 
