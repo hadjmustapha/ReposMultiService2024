@@ -9,8 +9,10 @@ import org.mapstruct.Mapping;
 public interface EmployeeMapper {
 
     @Mapping(source = "nomPrenom",target = "nomComplet")
+    @Mapping(source = "matricule",target = "matricule")
     EmployeeDto toEmployeeDto(Employee employee);
 
     @Mapping(source = "nomComplet",target = "nomPrenom")
+    @Mapping(source = "matricule",target = "matricule")
     Employee toEmployee(EmployeeDto employeeDto);
 }

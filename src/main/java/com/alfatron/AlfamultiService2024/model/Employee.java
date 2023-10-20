@@ -42,7 +42,7 @@ public class Employee {
     @Column(name="ID_STRUCTURE")
     Integer idStructure;
 
-    @Column(name="ID_POSTE")
+    @Column(name="ID_POSTE") // en relation avec Poste
     Integer idPoste;
 
     @Column(name="DATE_ENTREE")

@@ -10,6 +10,8 @@ public class EmployeeDto {
 
     String nomComplet;
 
+    Integer matricule;
+
     public Integer getId() {
         return id;
     }
@@ -24,5 +26,13 @@ public class EmployeeDto {
 
     public void setNomComplet(String nomComplet) {
         this.nomComplet = nomComplet;
+    }
+
+    public Integer getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(Integer matricule) {
+        this.matricule = matricule;
     }
 }

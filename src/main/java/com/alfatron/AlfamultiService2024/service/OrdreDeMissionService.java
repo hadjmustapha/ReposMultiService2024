@@ -5,12 +5,13 @@ import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundExceptio
 import com.alfatron.AlfamultiService2024.exception.Custom_InvalidEntityException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.OrdreDeMissionMapper;
+import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.repository.OrdreDeMissionRepository;
 import com.alfatron.AlfamultiService2024.validator.OrdreDeMissionValidator;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,6 +64,78 @@ public class OrdreDeMissionService {
     };
 
 
+    public List<OrdreDeMissionDto> filtreParNomEmployee(String nom){
 
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto= ordreDeMissionRepository.filtreParNomEmployee(nom,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParDestination(String destination){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto= ordreDeMissionRepository.filtreParDestination(destination,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParObjetDeMission(String objet){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto= ordreDeMissionRepository.filtreParObjetDeMission(objet,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParStructure(String structure){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto= ordreDeMissionRepository.filtreParStructure(structure,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParDateOrdreDeMission(Date date){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto = ordreDeMissionRepository.filtreParDateOrdreDeMission(date,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> RechercheParDateOrdreDeMission(String dateOrdreDeMission){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto = ordreDeMissionRepository.RechercheParDateOrdreDeMission(dateOrdreDeMission,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParRaisonSocialeClient(String raisonSociale){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto = ordreDeMissionRepository.filtreParRaisonSocialeClient(raisonSociale,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
+    public List<OrdreDeMissionDto> filtreParRaisonSocialeFournisseur(String raisonSociale){
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+
+        List<OrdreDeMissionDto> listeOrdreDeMissionDto = ordreDeMissionRepository.filtreParRaisonSocialeFournisseur(raisonSociale,sort).stream()
+                .map(ordreDeMissionMapper::toOrdreDeMissionDto)
+                .collect(Collectors.toList());
+
+        return listeOrdreDeMissionDto;
+    }
 
 }
