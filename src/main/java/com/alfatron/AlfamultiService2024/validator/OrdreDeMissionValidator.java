@@ -20,6 +20,7 @@ public class OrdreDeMissionValidator {
     FournisseurService fournisseurService;
     VehiculeService vehiculeService;
     StructureService structureService;
+    List<String> erreurs ;
 
     public OrdreDeMissionValidator(EmployeeService employeeService, NatureMissionService natureMissionService, TypeDeTransportService typeDeTransportService, ClientService clientService, FournisseurService fournisseurService, VehiculeService vehiculeService, StructureService structureService) {
         this.employeeService = employeeService;
@@ -32,22 +33,23 @@ public class OrdreDeMissionValidator {
     }
 
     public List<String> validateOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto){
-         List<String> erreurs = new ArrayList<>();
 
-         erreurs.addAll(verificationChampsObligatoire(ordreDeMissionDto));
+         erreurs= new ArrayList<>();
 
-         erreurs.addAll(validationClient(ordreDeMissionDto));
-         erreurs.addAll(validationEmployee(ordreDeMissionDto));
-         erreurs.addAll(validationNatureDeMission(ordreDeMissionDto));
-         erreurs.addAll(validationStructure(ordreDeMissionDto));
-         erreurs.addAll(validationVehicule(ordreDeMissionDto));
-         erreurs.addAll(validationFournisseur(ordreDeMissionDto));
-         erreurs.addAll(validationTypeDeTransport(ordreDeMissionDto));
+         verificationChampsObligatoire(ordreDeMissionDto);
+
+         validationClient(ordreDeMissionDto);
+         validationEmployee(ordreDeMissionDto);
+         validationNatureDeMission(ordreDeMissionDto);
+         validationStructure(ordreDeMissionDto);
+         validationVehicule(ordreDeMissionDto);
+         validationFournisseur(ordreDeMissionDto);
+         validationTypeDeTransport(ordreDeMissionDto);
 
         return erreurs;
     }
-    public List<String> verificationChampsObligatoire(OrdreDeMissionDto ordreDeMissionDto){
-        List<String> erreurs = new ArrayList<>();
+    public void verificationChampsObligatoire(OrdreDeMissionDto ordreDeMissionDto){
+
 
         if(ordreDeMissionDto == null){
             erreurs.add("Saisie invalide de l'ordre de mission !");
@@ -74,13 +76,9 @@ public class OrdreDeMissionValidator {
             erreurs.add("Veuillez saisir la nature de mission");
         }
 
-        return erreurs;
     }
-    public List<String> validationClient(OrdreDeMissionDto ordreDeMissionDto){
-
-        List<String> erreurs = new ArrayList<>();
-
-        if(ordreDeMissionDto.getClientDto() != null){
+    public void validationClient(OrdreDeMissionDto ordreDeMissionDto){
+         if(ordreDeMissionDto.getClientDto() != null){
             if(ordreDeMissionDto.getClientDto().getId() == null){
                 erreurs.add("Saisi du client non valide");
             }
@@ -88,11 +86,9 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Client saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationEmployee(OrdreDeMissionDto ordreDeMissionDto){
-        List<String> erreurs = new ArrayList<>();
-        if(ordreDeMissionDto.getEmployeeDto() != null){
+    public void validationEmployee(OrdreDeMissionDto ordreDeMissionDto){
+       if(ordreDeMissionDto.getEmployeeDto() != null){
             if(ordreDeMissionDto.getEmployeeDto().getId() == null){
                 erreurs.add("Saisi de employée non valide");
             }
@@ -100,10 +96,8 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Employée saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationNatureDeMission(OrdreDeMissionDto ordreDeMissionDto) {
-        List<String> erreurs = new ArrayList<>();
+    public void validationNatureDeMission(OrdreDeMissionDto ordreDeMissionDto) {
         if (ordreDeMissionDto.getNatureMissionDto() != null) {
             if (ordreDeMissionDto.getNatureMissionDto().getId() == null) {
                 erreurs.add("Saisi Nature de mission non valide");
@@ -112,11 +106,8 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Nature de mission saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationStructure(OrdreDeMissionDto ordreDeMissionDto){
-        List<String> erreurs = new ArrayList<>();
-
+    public void validationStructure(OrdreDeMissionDto ordreDeMissionDto){
         if(ordreDeMissionDto.getStructureDto() != null){
             if(ordreDeMissionDto.getStructureDto().getId() == null){
                 erreurs.add("Saisi de la structure non valide");
@@ -125,11 +116,8 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Structure saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationVehicule(OrdreDeMissionDto ordreDeMissionDto) {
-        List<String> erreurs = new ArrayList<>();
-
+    public void validationVehicule(OrdreDeMissionDto ordreDeMissionDto) {
         if (ordreDeMissionDto.getVehiculeDto() != null) {
             if (ordreDeMissionDto.getVehiculeDto().getId() == null) {
                 erreurs.add("Saisi du vehicule non valide");
@@ -138,10 +126,8 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Vehicule saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationFournisseur(OrdreDeMissionDto ordreDeMissionDto){
-        List<String> erreurs = new ArrayList<>();
+    public void validationFournisseur(OrdreDeMissionDto ordreDeMissionDto){
         if(ordreDeMissionDto.getFournisseurDto() != null){
             if(ordreDeMissionDto.getFournisseurDto().getId() == null){
                 erreurs.add("Saisi du fournisseur non valide");
@@ -150,11 +136,8 @@ public class OrdreDeMissionValidator {
                 erreurs.add("incohérence de donnée : Fournisseur saisi non valide");
             }
         }
-        return erreurs;
     }
-    public List<String> validationTypeDeTransport(OrdreDeMissionDto ordreDeMissionDto) {
-        List<String> erreurs = new ArrayList<>();
-
+    public void validationTypeDeTransport(OrdreDeMissionDto ordreDeMissionDto) {
         if (ordreDeMissionDto.getTypeDeTransportDto() == null) {
             erreurs.add("Veuillez saisir Type de transport ");
         }
@@ -167,12 +150,9 @@ public class OrdreDeMissionValidator {
             }
 
         }
-        return erreurs;
     }
 
     }
-    //---------------------Vérification si Type de transport est bien saisi -------------------------
-
 
 
 
