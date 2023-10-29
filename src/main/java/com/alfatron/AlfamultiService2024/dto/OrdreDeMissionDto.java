@@ -35,6 +35,8 @@ public class OrdreDeMissionDto {
 
     TypeDeTransportDto typeDeTransportDto;
 
+    String remarquesDto;
+
     public Integer getId() {
         return id;
     }
@@ -137,5 +139,13 @@ public class OrdreDeMissionDto {
 
     public void setTypeDeTransportDto(TypeDeTransportDto typeDeTransportDto) {
         this.typeDeTransportDto = typeDeTransportDto;
+    }
+
+    public String getRemarquesDto() {
+        return remarquesDto;
+    }
+
+    public void setRemarquesDto(String remarquesDto) {
+        this.remarquesDto = remarquesDto;
     }
 }

@@ -1,6 +1,8 @@
 package com.alfatron.AlfamultiService2024.service;
 
+import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -9,6 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,15 +38,25 @@ public class JasperService {
 
         ), false);
 */
-        JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(ordreDeMissionService.findAllOrdreDeMission(), false);
+        //JRBeanCollectionDataSource beanCollectionDataSource = new JRBeanCollectionDataSource(ordreDeMissionService.findOrdreDeMissionById(id), false);
+        //new JRBeanArrayDataSource(new YourBean[]{yourBean}));
+        OrdreDeMissionDto OrdreDeMissionDto = ordreDeMissionService.findOrdreDeMissionById(id);
+        JRBeanArrayDataSource jrBeanArrayDataSource = new JRBeanArrayDataSource(new OrdreDeMissionDto[]{OrdreDeMissionDto});
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("total", id);
 
-        JasperReport compileReport = JasperCompileManager
-               .compileReport(new FileInputStream("src/main/resources/test2024_2.jrxml"));
-        //JasperReport compileReport = JasperCompileManager
-          //      .compileReport(new FileInputStream("src/main/resources/Blank_A4.jrxml"));
-        JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, parameters, beanCollectionDataSource);
+
+       // JasperReport compileReport = JasperCompileManager
+         //      .compileReport(new FileInputStream("src/main/resources/test2024_2.jrxml"));
+        InputStream compileReport2 = new FileInputStream("src/main/resources/test2024_2.jasper");
+       // Path path = Paths.get("D:\\WorkSpace Eclipse\\AlfamultiService2024\\src\\main\\resources\\test2024_2.jasper");
+       // System.out.println(path);
+
+       // D:\WorkSpace Eclipse\AlfamultiService2024\src\main\resources\test2024_2.jasper
+
+        //InputStream compileReport2 = this.getClass().getResourceAsStream("/src/main/resources/test2024_2.jasper");
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport2, parameters, jrBeanArrayDataSource);
 
 
         byte data[] = JasperExportManager.exportReportToPdf(jasperPrint);

@@ -21,6 +21,7 @@ public interface OrdreDeMissionMapper {
     @Mapping(source = "employee",target = "employeeDto")
     @Mapping(source = "references",target = "objetDeMission")
     @Mapping(source = "client",target = "clientDto")
+    @Mapping(source = "remarques",target = "remarquesDto")
     OrdreDeMissionDto toOrdreDeMissionDto(OrdreDeMission ordreDeMission);
 
     @Mapping(source = "typeDeTransportDto",target = "typeDeTransport")
@@ -31,6 +32,7 @@ public interface OrdreDeMissionMapper {
     @Mapping(source = "employeeDto",target = "employee")
     @Mapping(source = "objetDeMission",target = "references")
     @Mapping(source = "clientDto",target = "client")
+    @Mapping(source = "remarquesDto",target = "remarques")
     OrdreDeMission toOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto);
 
 

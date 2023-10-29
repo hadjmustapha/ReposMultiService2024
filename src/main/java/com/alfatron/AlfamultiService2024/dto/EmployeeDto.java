@@ -12,6 +12,8 @@ public class EmployeeDto {
 
     Integer matricule;
 
+    PosteDto posteDto;
+
     public Integer getId() {
         return id;
     }
@@ -34,5 +36,13 @@ public class EmployeeDto {
 
     public void setMatricule(Integer matricule) {
         this.matricule = matricule;
+    }
+
+    public PosteDto getPosteDto() {
+        return posteDto;
+    }
+
+    public void setPosteDto(PosteDto posteDto) {
+        this.posteDto = posteDto;
     }
 }

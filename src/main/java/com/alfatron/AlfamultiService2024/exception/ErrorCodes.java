@@ -3,6 +3,8 @@ package com.alfatron.AlfamultiService2024.exception;
 
 public enum ErrorCodes {
 
+
+
     ORDRE_DE_MISSION_NOT_FOUND(1000),
     ORDRE_DE_MISSION_NOT_VALID(1001),
 
@@ -25,7 +27,11 @@ public enum ErrorCodes {
     TYPE_DE_TRANSPORT_NOT_VALID(7001),
 
     VEHICULE_NOT_FOUND(8000),
-    VEHICULE__NOT_VALID(8001);
+    VEHICULE__NOT_VALID(8001),
+
+
+    POSTE_NOT_FOUND(9000),
+    POSTE_NOT_VALID(9001);
 
 
     private int code;
