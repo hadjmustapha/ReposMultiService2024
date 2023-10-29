@@ -31,8 +31,6 @@ public class ClientService {
                 .collect(Collectors.toList());
     }
 
-
-
     public ClientDto findClientById(Integer id) {
         //---- must return client Dto
         if (id == null) {

@@ -9,265 +9,422 @@
     <field name="objetDeMission" class="java.lang.String"/>
     <field name="employeeDto.nomComplet" class="java.lang.String"/>
     <field name="employeeDto.matricule" class="java.lang.Integer"/>
+    <field name="employeeDto.posteDto.intitulePoste" class="java.lang.String"/>
+    <field name="structureDto.libelle" class="java.lang.String"/>
+    <field name="vehiculeDto.libelle" class="java.lang.String"/>
+    <field name="dateDebut" class="java.sql.Date"/>
+    <field name="dateFin" class="java.sql.Date"/>
+    <field name="dateOrdreDeMission" class="java.sql.Date"/>
+    <field name="destination" class="java.lang.String"/>
+    <field name="remarquesDto" class="java.lang.String"/>
     <background>
         <band splitType="Stretch"/>
     </background>
     <title>
         <band height="719" splitType="Stretch">
-            <rectangle>
-                <reportElement x="80" y="170" width="400" height="50" uuid="0a825a44-c1b0-44db-880c-b52353f91ca0"/>
+            <rectangle radius="10">
+                <reportElement x="100" y="165" width="364" height="40" uuid="0a825a44-c1b0-44db-880c-b52353f91ca0"/>
             </rectangle>
             <textField>
                 <reportElement x="460" y="110" width="100" height="30" uuid="390b7019-aa2e-494c-b45e-f2bf3f48538d"/>
                 <textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="410" y="30" width="148" height="20" uuid="34016057-bc23-4005-8509-77a2f812fcd8"/>
+                <reportElement x="340" y="30" width="218" height="20" uuid="34016057-bc23-4005-8509-77a2f812fcd8"/>
                 <textElement textAlignment="Right">
-                    <font fontName="ArialAr" size="14" pdfEncoding="Cp1256"/>
+                    <font fontName="ArialAr" size="14" isBold="true" pdfEncoding="Cp1256"/>
                 </textElement>
-                <text><![CDATA[شركة ألفترون للصناعات الالكترونيةN]]></text>
+                <text><![CDATA[شركة ألفترون للصناعات الالكترونية]]></text>
             </staticText>
             <staticText>
-                <reportElement x="350" y="180" width="119" height="30" uuid="d8f9529e-6299-4f91-9468-6d73f172f2b3"/>
-                <textElement>
+                <reportElement x="330" y="175" width="119" height="20" uuid="d8f9529e-6299-4f91-9468-6d73f172f2b3"/>
+                <textElement textAlignment="Right">
                     <font fontName="ArialAr" size="16" isBold="true"/>
                 </textElement>
                 <text><![CDATA[أمـــر بـــمـهــمــــة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="90" y="180" width="160" height="30" uuid="3a39ef0f-2ab7-443b-bec8-b19704de48f6"/>
+                <reportElement x="111" y="175" width="189" height="20" uuid="3a39ef0f-2ab7-443b-bec8-b19704de48f6"/>
                 <textElement rotation="None">
                     <font fontName="Arial" size="16" isBold="true"/>
                 </textElement>
                 <text><![CDATA[ORDRE DE MISSION]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="10" width="160" height="20" uuid="e2b2f6aa-d821-4d66-bbef-464b7de875f1"/>
+                <reportElement x="10" y="10" width="150" height="15" uuid="e2b2f6aa-d821-4d66-bbef-464b7de875f1">
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[Groupe ELEC AL-DJAZAIR
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="30" width="160" height="20" uuid="c72b4940-db63-476e-bffa-f0124b7af5d5"/>
+                <reportElement x="10" y="25" width="160" height="15" uuid="c72b4940-db63-476e-bffa-f0124b7af5d5">
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[ALFATRON Electronic industrie
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="70" width="20" height="20" uuid="1ec0b319-ae00-4640-b1f3-dd115d648255"/>
-                <text><![CDATA[N°]]></text>
+                <reportElement x="10" y="80" width="20" height="20" uuid="1ec0b319-ae00-4640-b1f3-dd115d648255"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[N° :]]></text>
             </staticText>
             <staticText>
-                <reportElement x="70" y="70" width="26" height="20" uuid="d22c7677-1df8-44ac-be65-eaed86dfb529"/>
+                <reportElement x="64" y="80" width="26" height="20" uuid="d22c7677-1df8-44ac-be65-eaed86dfb529"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[- LE :]]></text>
             </staticText>
             <staticText>
-                <reportElement x="410" y="220" width="70" height="20" uuid="cf60ceb4-e61b-4d7f-9bb7-031b94b977eb"/>
+                <reportElement x="394" y="205" width="70" height="20" uuid="cf60ceb4-e61b-4d7f-9bb7-031b94b977eb"/>
                 <text><![CDATA[FO.GRH.23-R1
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="240" width="150" height="20" uuid="984a250c-7133-489d-a1c6-dcd241047a27"/>
+                <reportElement x="10" y="240" width="220" height="20" uuid="984a250c-7133-489d-a1c6-dcd241047a27"/>
+                <textElement>
+                    <font size="12" isBold="true" isItalic="true"/>
+                </textElement>
                 <text><![CDATA[L'entreprise ordonne l'employé
 ]]></text>
             </staticText>
             <staticText>
                 <reportElement x="10" y="270" width="70" height="20" uuid="16045c87-7b81-435f-a271-1509ee713c06"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Matricule :
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="290" width="79" height="20" uuid="8011003f-556d-4e10-beae-27a6eb09b754"/>
+                <reportElement x="10" y="290" width="100" height="20" uuid="8011003f-556d-4e10-beae-27a6eb09b754"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Nom & Prénom :]]></text>
             </staticText>
             <staticText>
                 <reportElement x="10" y="310" width="70" height="20" uuid="a211e14d-0cd5-4cd5-88ce-8e1ad5ef2069"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Fonction :
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="10" y="330" width="150" height="20" uuid="8f52c653-6c0f-4045-a56f-25ca21b6b008"/>
-                <text><![CDATA[Département]]></text>
+                <reportElement x="10" y="330" width="100" height="20" uuid="8f52c653-6c0f-4045-a56f-25ca21b6b008"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Département :]]></text>
             </staticText>
             <staticText>
                 <reportElement x="10" y="379" width="70" height="20" uuid="0763952d-6707-48b9-94a4-2e6f26c9e7af"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Se rend à :]]></text>
             </staticText>
             <staticText>
                 <reportElement x="8" y="420" width="87" height="20" uuid="3f313bc9-b29e-42f8-9fea-3a7b4329671b"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Date de départ
 ]]></text>
             </staticText>
             <staticText>
                 <reportElement x="8" y="440" width="87" height="20" uuid="8cda08d2-f83f-45d8-ba5b-3ccf17b1db57"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Date de retour
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="8" y="470" width="150" height="20" uuid="bf470864-a151-4386-9982-6fb3b1f85484"/>
+                <reportElement x="8" y="470" width="132" height="20" uuid="bf470864-a151-4386-9982-6fb3b1f85484"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Objet de la mission :]]></text>
             </staticText>
             <staticText>
-                <reportElement x="8" y="510" width="102" height="20" uuid="249cc2f0-a38f-488a-8d11-e21c617d393f"/>
+                <reportElement x="8" y="510" width="132" height="20" uuid="249cc2f0-a38f-488a-8d11-e21c617d393f"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Moyen de transport :
 ]]></text>
             </staticText>
             <staticText>
                 <reportElement x="8" y="530" width="62" height="20" uuid="4298ab0e-4f71-4344-b6d9-417e01fbf00a"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
                 <text><![CDATA[Remarque :]]></text>
             </staticText>
             <textField>
-                <reportElement x="260" y="320" width="100" height="30" uuid="5e185f3b-f8a9-478a-bdf2-f96f1cac1d79"/>
-                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+                <reportElement x="30" y="80" width="20" height="20" uuid="5e185f3b-f8a9-478a-bdf2-f96f1cac1d79">
+                    <printWhenExpression><![CDATA[$F{id} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[($F{id})]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="160" y="470" width="100" height="30" uuid="022d0051-5363-424d-8c54-bb7129649dd8">
+                <reportElement x="150" y="470" width="181" height="20" uuid="022d0051-5363-424d-8c54-bb7129649dd8">
                     <printWhenExpression><![CDATA[$F{objetDeMission} !=null]]></printWhenExpression>
                 </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
                 <textFieldExpression><![CDATA[$F{objetDeMission}]]></textFieldExpression>
             </textField>
             <staticText>
                 <reportElement x="469" y="10" width="90" height="20" uuid="d310aa90-a7a2-4257-b769-82aeaa870300"/>
                 <textElement>
-                    <font fontName="ArialAr" size="14"/>
+                    <font fontName="ArialAr" size="14" isBold="true"/>
                 </textElement>
                 <text><![CDATA[مجمع اليك الجزائر]]></text>
             </staticText>
             <image>
-                <reportElement mode="Transparent" x="168" y="110" width="230" height="49" backcolor="#FFFFFF" uuid="8804de64-8ca9-4003-9be8-b651b9fcb188"/>
+                <reportElement mode="Transparent" x="179" y="124" width="202" height="30" backcolor="#FFFFFF" uuid="8804de64-8ca9-4003-9be8-b651b9fcb188"/>
                 <imageExpression><![CDATA["D:/Formation/Jasper Report/LOGO ALFATRON V2.png"]]></imageExpression>
             </image>
             <textField>
-                <reportElement x="89" y="311" width="39" height="19" uuid="146d9e43-a0d1-4fe5-aeb9-30186f045fa1"/>
-                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+                <reportElement x="149" y="311" width="272" height="19" uuid="146d9e43-a0d1-4fe5-aeb9-30186f045fa1">
+                    <printWhenExpression><![CDATA[$F{employeeDto.posteDto.intitulePoste} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{employeeDto.posteDto.intitulePoste}]]></textFieldExpression>
             </textField>
             <rectangle>
-                <reportElement x="8" y="570" width="272" height="19" uuid="f85937e9-a3dc-4dd3-a881-cc78df35644c"/>
+                <reportElement x="8" y="570" width="211" height="19" uuid="f85937e9-a3dc-4dd3-a881-cc78df35644c"/>
             </rectangle>
             <rectangle>
-                <reportElement x="280" y="570" width="280" height="19" uuid="fffaae60-0baf-45de-84bd-b491326eb259"/>
+                <reportElement x="219" y="570" width="341" height="19" uuid="fffaae60-0baf-45de-84bd-b491326eb259"/>
             </rectangle>
             <rectangle>
-                <reportElement x="8" y="589" width="272" height="89" uuid="4542e594-1852-4170-8f3f-e9099180b2d7"/>
+                <reportElement x="8" y="589" width="211" height="89" uuid="4542e594-1852-4170-8f3f-e9099180b2d7"/>
             </rectangle>
             <rectangle>
-                <reportElement x="280" y="589" width="280" height="89" uuid="8d850eaa-77f1-44de-9bdc-91b5ab34434a"/>
+                <reportElement x="219" y="589" width="341" height="89" uuid="8d850eaa-77f1-44de-9bdc-91b5ab34434a"/>
             </rectangle>
             <staticText>
-                <reportElement x="10" y="570" width="100" height="30" uuid="9bdb1f19-9971-4381-82ea-246ea4359857"/>
+                <reportElement x="10" y="573" width="100" height="19" uuid="9bdb1f19-9971-4381-82ea-246ea4359857"/>
+                <textElement textAlignment="Center">
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[Visa responsable ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="280" y="570" width="140" height="30" uuid="8b7cd7c4-d478-4286-ace4-da5a50ddbfd3"/>
+                <reportElement x="231" y="573" width="169" height="19" uuid="8b7cd7c4-d478-4286-ace4-da5a50ddbfd3"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
                 <text><![CDATA[Visas des structures d'accueil]]></text>
             </staticText>
             <staticText>
                 <reportElement x="8" y="680" width="272" height="30" uuid="3de172c5-ec02-47af-861d-89edd587eb38"/>
                 <textElement>
-                    <font fontName="ArialAr"/>
+                    <font fontName="ArialAr" isBold="false"/>
                 </textElement>
                 <text><![CDATA[NB : Ce document doit être préservé par son titulaire, et
 présenté en cas de besoin
 ]]></text>
             </staticText>
             <staticText>
-                <reportElement x="210" y="570" width="70" height="19" uuid="6c049a3c-9250-4cc7-8ea0-da0269083045"/>
-                <textElement>
-                    <font fontName="ArialAr"/>
+                <reportElement x="149" y="574" width="70" height="19" uuid="6c049a3c-9250-4cc7-8ea0-da0269083045"/>
+                <textElement textAlignment="Center">
+                    <font fontName="ArialAr" isBold="true"/>
                 </textElement>
                 <text><![CDATA[تأشيرة المسؤول]]></text>
             </staticText>
             <staticText>
-                <reportElement x="460" y="570" width="100" height="30" uuid="b43336b1-dfe1-42ce-b512-3eaca96d79da"/>
-                <textElement>
-                    <font fontName="ArialAr"/>
+                <reportElement x="460" y="573" width="100" height="19" uuid="b43336b1-dfe1-42ce-b512-3eaca96d79da"/>
+                <textElement textAlignment="Center">
+                    <font fontName="ArialAr" isBold="true"/>
                 </textElement>
                 <text><![CDATA[ الاستقبال مصالح تأشيرات]]></text>
             </staticText>
             <staticText>
                 <reportElement x="280" y="680" width="280" height="30" uuid="646c3006-9972-4e2a-b584-1451fcdc5018"/>
                 <textElement textAlignment="Right">
-                    <font fontName="ArialAr"/>
+                    <font fontName="ArialAr" isBold="false"/>
                 </textElement>
                 <text><![CDATA[ملاحظة يجب على حامل هذه الوثيقة الحفاظ عليها و تقديمها عند الضرورة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="420" y="240" width="150" height="20" uuid="a947a9cf-b811-44ef-9aa4-e98adabc376b"/>
-                <text><![CDATA[L'entreprise ordonne l'employé
-]]></text>
+                <reportElement x="400" y="240" width="150" height="20" uuid="a947a9cf-b811-44ef-9aa4-e98adabc376b"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true" isItalic="false"/>
+                </textElement>
+                <text><![CDATA[بتكليف من المؤسسة , الموظف]]></text>
             </staticText>
             <textField>
-                <reportElement x="89" y="290" width="151" height="19" uuid="7fd83566-f6cd-4d55-b9c2-21c72aeaced3"/>
+                <reportElement x="149" y="290" width="272" height="19" uuid="7fd83566-f6cd-4d55-b9c2-21c72aeaced3">
+                    <printWhenExpression><![CDATA[$F{employeeDto.nomComplet} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
                 <textFieldExpression><![CDATA[$F{employeeDto.nomComplet}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="80" y="270" width="150" height="20" isPrintWhenDetailOverflows="true" uuid="691ace87-0bee-4066-96fe-0463857415d5"/>
+                <reportElement x="128" y="270" width="272" height="20" isPrintWhenDetailOverflows="true" uuid="691ace87-0bee-4066-96fe-0463857415d5">
+                    <printWhenExpression><![CDATA[$F{employeeDto.matricule} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement textAlignment="Center">
+                    <font size="12"/>
+                </textElement>
                 <textFieldExpression><![CDATA[$F{employeeDto.matricule}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="89" y="380" width="60" height="18" uuid="1038a976-8d60-48df-aca3-10189eef5fd5"/>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <reportElement x="150" y="380" width="271" height="18" uuid="1038a976-8d60-48df-aca3-10189eef5fd5">
+                    <printWhenExpression><![CDATA[$F{destination} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{destination}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="100" y="421" width="60" height="18" uuid="42381839-ece3-47d8-bea2-910d3c5d06c8"/>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <reportElement x="150" y="421" width="310" height="18" uuid="42381839-ece3-47d8-bea2-910d3c5d06c8">
+                    <printWhenExpression><![CDATA[$F{dateDebut} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dateDebut})]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="100" y="440" width="100" height="19" uuid="1c91dc58-dfe5-4140-9c90-be6e887a5ef4"/>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <reportElement x="150" y="440" width="310" height="19" uuid="1c91dc58-dfe5-4140-9c90-be6e887a5ef4">
+                    <printWhenExpression><![CDATA[$F{dateFin} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dateFin})]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="114" y="510" width="100" height="22" uuid="c1805324-e838-4f35-b5cb-2901f646ad33"/>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <reportElement x="150" y="509" width="326" height="22" uuid="c1805324-e838-4f35-b5cb-2901f646ad33">
+                    <printWhenExpression><![CDATA[$F{vehiculeDto.libelle} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{vehiculeDto.libelle}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="69" y="531" width="100" height="18" uuid="f68f7750-5ab9-4254-91c1-102885c90ddf"/>
-                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+                <reportElement x="69" y="531" width="420" height="29" uuid="f68f7750-5ab9-4254-91c1-102885c90ddf">
+                    <printWhenExpression><![CDATA[$F{remarquesDto} !=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{remarquesDto}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="500" y="270" width="70" height="20" uuid="c4a7a4b7-9f31-48de-8595-a14b6ce14a69"/>
-                <text><![CDATA[Matricule :
-]]></text>
+                <reportElement x="480" y="270" width="70" height="20" uuid="c4a7a4b7-9f31-48de-8595-a14b6ce14a69"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[رقم]]></text>
             </staticText>
             <staticText>
-                <reportElement x="490" y="290" width="79" height="20" uuid="87c73148-bcc1-4d02-aff2-f191f7492b98"/>
-                <text><![CDATA[Nom & Prénom :]]></text>
+                <reportElement x="470" y="289" width="79" height="20" uuid="87c73148-bcc1-4d02-aff2-f191f7492b98"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[الاسم و اللقب]]></text>
             </staticText>
             <staticText>
-                <reportElement x="494" y="311" width="70" height="20" uuid="6c14184e-af06-4f40-8667-724d51996c67"/>
-                <text><![CDATA[Fonction :
-]]></text>
+                <reportElement x="479" y="309" width="70" height="20" uuid="6c14184e-af06-4f40-8667-724d51996c67"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[المنصب في المؤسسة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="419" y="330" width="150" height="20" uuid="9f872a9e-a0c1-4c1c-92bb-4ca1c708b660"/>
-                <text><![CDATA[Département]]></text>
+                <reportElement x="400" y="325" width="150" height="20" uuid="9f872a9e-a0c1-4c1c-92bb-4ca1c708b660"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[المصلحة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="500" y="380" width="70" height="20" uuid="a8900c3d-9cec-4b7e-9cb8-c7c0fb28c4f3"/>
-                <text><![CDATA[Se rend à :]]></text>
+                <reportElement x="481" y="379" width="70" height="20" uuid="a8900c3d-9cec-4b7e-9cb8-c7c0fb28c4f3"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[يتوجه الى]]></text>
             </staticText>
             <staticText>
-                <reportElement x="473" y="420" width="87" height="20" uuid="f76ee30f-a480-43ab-94f2-bc2fd51685bd"/>
-                <text><![CDATA[Date de départ
-]]></text>
+                <reportElement x="464" y="420" width="87" height="20" uuid="f76ee30f-a480-43ab-94f2-bc2fd51685bd"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[تاريخ الذهاب]]></text>
             </staticText>
             <staticText>
-                <reportElement x="473" y="439" width="87" height="20" uuid="500f764d-f4fc-4a2c-8c15-153057181ea6"/>
-                <text><![CDATA[Date de retour
-]]></text>
+                <reportElement x="464" y="439" width="87" height="20" uuid="500f764d-f4fc-4a2c-8c15-153057181ea6"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[تاريخ العودة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="420" y="470" width="150" height="20" uuid="477e91f0-b477-4a81-a7a0-31ffa643ed65"/>
-                <text><![CDATA[Objet de la mission :]]></text>
+                <reportElement x="400" y="470" width="150" height="20" uuid="477e91f0-b477-4a81-a7a0-31ffa643ed65"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[طبيعة المهمة]]></text>
             </staticText>
             <staticText>
-                <reportElement x="456" y="510" width="102" height="20" uuid="19d90436-e384-4d1a-be86-e8879dc6c49a"/>
-                <text><![CDATA[Moyen de transport :
-]]></text>
+                <reportElement x="449" y="510" width="102" height="20" uuid="19d90436-e384-4d1a-be86-e8879dc6c49a"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[وسيلة التنقل]]></text>
             </staticText>
             <staticText>
-                <reportElement x="498" y="530" width="62" height="20" uuid="7542573c-a93d-444d-8f60-2b5c31e11c36"/>
-                <text><![CDATA[Remarque :]]></text>
+                <reportElement x="489" y="529" width="62" height="20" uuid="7542573c-a93d-444d-8f60-2b5c31e11c36"/>
+                <textElement textAlignment="Right">
+                    <font fontName="ArialAr" size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ملاحظات جانبية]]></text>
             </staticText>
+            <textField>
+                <reportElement x="94" y="80" width="316" height="30" uuid="443f85a5-ddcf-489c-9aec-e50b313cbbfa">
+                    <printWhenExpression><![CDATA[$F{dateOrdreDeMission}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dateOrdreDeMission})]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="149" y="330" width="272" height="20" uuid="b72a2499-f408-4523-9329-abe41ed1c22a">
+                    <printWhenExpression><![CDATA[$F{structureDto.libelle}!=null]]></printWhenExpression>
+                </reportElement>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{structureDto.libelle}]]></textFieldExpression>
+            </textField>
         </band>
     </title>
     <pageFooter>

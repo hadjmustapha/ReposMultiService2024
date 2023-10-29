@@ -1,40 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test2024" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d0c393b-ee48-4d0e-be90-68c68f91c467">
+	<parameter name="total" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="objetDeMission" class="java.lang.String"/>
+	<field name="employeeDto.nomComplet" class="java.lang.String"/>
+	<field name="employeeDto.matricule" class="java.lang.Integer"/>
+	<field name="employeeDto.posteDto.intitulePoste" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="90" splitType="Stretch">
+		<band height="719" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="80" y="165" width="384" height="40" uuid="0a825a44-c1b0-44db-880c-b52353f91ca0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="460" y="110" width="100" height="30" uuid="390b7019-aa2e-494c-b45e-f2bf3f48538d"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="160" y="10" width="270" height="70" uuid="d2f946de-409e-4676-9719-ee3e3b7af99b"/>
-				<textElement>
-					<font size="29"/>
+				<reportElement x="410" y="30" width="148" height="20" uuid="34016057-bc23-4005-8509-77a2f812fcd8"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="14" isBold="true" pdfEncoding="Cp1256"/>
 				</textElement>
-				<text><![CDATA[LAHNECHE 2024
+				<text><![CDATA[شركة ألفترون للصناعات الالكترونيةN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="175" width="119" height="20" uuid="d8f9529e-6299-4f91-9468-6d73f172f2b3"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[أمـــر بـــمـهــمــــة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="175" width="160" height="20" uuid="3a39ef0f-2ab7-443b-bec8-b19704de48f6"/>
+				<textElement rotation="None">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDRE DE MISSION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="150" height="15" uuid="e2b2f6aa-d821-4d66-bbef-464b7de875f1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Groupe ELEC AL-DJAZAIR
 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="25" width="160" height="15" uuid="c72b4940-db63-476e-bffa-f0124b7af5d5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALFATRON Electronic industrie
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="80" width="20" height="20" uuid="1ec0b319-ae00-4640-b1f3-dd115d648255"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="80" width="26" height="20" uuid="d22c7677-1df8-44ac-be65-eaed86dfb529"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[- LE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="220" width="70" height="20" uuid="cf60ceb4-e61b-4d7f-9bb7-031b94b977eb"/>
+				<text><![CDATA[FO.GRH.23-R1
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="240" width="150" height="20" uuid="984a250c-7133-489d-a1c6-dcd241047a27"/>
+				<text><![CDATA[L'entreprise ordonne l'employé
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="270" width="70" height="20" uuid="16045c87-7b81-435f-a271-1509ee713c06"/>
+				<text><![CDATA[Matricule :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="290" width="79" height="20" uuid="8011003f-556d-4e10-beae-27a6eb09b754"/>
+				<text><![CDATA[Nom & Prénom :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="310" width="70" height="20" uuid="a211e14d-0cd5-4cd5-88ce-8e1ad5ef2069"/>
+				<text><![CDATA[Fonction :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="330" width="70" height="20" uuid="8f52c653-6c0f-4045-a56f-25ca21b6b008"/>
+				<text><![CDATA[Département]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="379" width="70" height="20" uuid="0763952d-6707-48b9-94a4-2e6f26c9e7af"/>
+				<text><![CDATA[Se rend à :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="420" width="87" height="20" uuid="3f313bc9-b29e-42f8-9fea-3a7b4329671b"/>
+				<text><![CDATA[Date de départ
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="440" width="87" height="20" uuid="8cda08d2-f83f-45d8-ba5b-3ccf17b1db57"/>
+				<text><![CDATA[Date de retour
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="470" width="88" height="20" uuid="bf470864-a151-4386-9982-6fb3b1f85484"/>
+				<text><![CDATA[Objet de la mission :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="510" width="102" height="20" uuid="249cc2f0-a38f-488a-8d11-e21c617d393f"/>
+				<text><![CDATA[Moyen de transport :
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="530" width="62" height="20" uuid="4298ab0e-4f71-4344-b6d9-417e01fbf00a"/>
+				<text><![CDATA[Remarque :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="210" width="100" height="30" uuid="5e185f3b-f8a9-478a-bdf2-f96f1cac1d79"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="470" width="261" height="20" uuid="022d0051-5363-424d-8c54-bb7129649dd8">
+					<printWhenExpression><![CDATA[$F{objetDeMission} !=null]]></printWhenExpression>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{objetDeMission}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="10" width="90" height="20" uuid="d310aa90-a7a2-4257-b769-82aeaa870300"/>
+				<textElement>
+					<font fontName="ArialAr" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[مجمع اليك الجزائر]]></text>
+			</staticText>
+			<image>
+				<reportElement mode="Transparent" x="179" y="124" width="202" height="30" backcolor="#FFFFFF" uuid="8804de64-8ca9-4003-9be8-b651b9fcb188"/>
+				<imageExpression><![CDATA["D:/Formation/Jasper Report/LOGO ALFATRON V2.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="128" y="311" width="172" height="19" uuid="146d9e43-a0d1-4fe5-aeb9-30186f045fa1"/>
+				<textFieldExpression><![CDATA[$F{employeeDto.posteDto.intitulePoste}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="8" y="570" width="211" height="19" uuid="f85937e9-a3dc-4dd3-a881-cc78df35644c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="219" y="570" width="341" height="19" uuid="fffaae60-0baf-45de-84bd-b491326eb259"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="8" y="589" width="211" height="89" uuid="4542e594-1852-4170-8f3f-e9099180b2d7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="219" y="589" width="341" height="89" uuid="8d850eaa-77f1-44de-9bdc-91b5ab34434a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="573" width="100" height="19" uuid="9bdb1f19-9971-4381-82ea-246ea4359857"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Visa responsable ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="573" width="169" height="19" uuid="8b7cd7c4-d478-4286-ace4-da5a50ddbfd3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Visas des structures d'accueil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="680" width="272" height="30" uuid="3de172c5-ec02-47af-861d-89edd587eb38"/>
+				<textElement>
+					<font fontName="ArialAr" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NB : Ce document doit être préservé par son titulaire, et
+présenté en cas de besoin
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="149" y="574" width="70" height="19" uuid="6c049a3c-9250-4cc7-8ea0-da0269083045"/>
+				<textElement textAlignment="Center">
+					<font fontName="ArialAr" isBold="true"/>
+				</textElement>
+				<text><![CDATA[تأشيرة المسؤول]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="573" width="100" height="19" uuid="b43336b1-dfe1-42ce-b512-3eaca96d79da"/>
+				<textElement textAlignment="Center">
+					<font fontName="ArialAr" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ الاستقبال مصالح تأشيرات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="680" width="280" height="30" uuid="646c3006-9972-4e2a-b584-1451fcdc5018"/>
+				<textElement textAlignment="Right">
+					<font fontName="ArialAr" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ملاحظة يجب على حامل هذه الوثيقة الحفاظ عليها و تقديمها عند الضرورة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="240" width="150" height="20" uuid="a947a9cf-b811-44ef-9aa4-e98adabc376b"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[بتكليف من المؤسسة , الموظف]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="290" width="192" height="19" uuid="7fd83566-f6cd-4d55-b9c2-21c72aeaced3"/>
+				<textFieldExpression><![CDATA[$F{employeeDto.nomComplet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="270" width="192" height="20" isPrintWhenDetailOverflows="true" uuid="691ace87-0bee-4066-96fe-0463857415d5"/>
+				<textFieldExpression><![CDATA[$F{employeeDto.matricule}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="380" width="60" height="18" uuid="1038a976-8d60-48df-aca3-10189eef5fd5"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="421" width="60" height="18" uuid="42381839-ece3-47d8-bea2-910d3c5d06c8"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="440" width="100" height="19" uuid="1c91dc58-dfe5-4140-9c90-be6e887a5ef4"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="510" width="100" height="22" uuid="c1805324-e838-4f35-b5cb-2901f646ad33"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="531" width="100" height="18" uuid="f68f7750-5ab9-4254-91c1-102885c90ddf"/>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="480" y="270" width="70" height="20" uuid="c4a7a4b7-9f31-48de-8595-a14b6ce14a69"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[رقم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="289" width="79" height="20" uuid="87c73148-bcc1-4d02-aff2-f191f7492b98"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[الاسم و اللقب]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="309" width="70" height="20" uuid="6c14184e-af06-4f40-8667-724d51996c67"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[المنصب في المؤسسة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="325" width="150" height="20" uuid="9f872a9e-a0c1-4c1c-92bb-4ca1c708b660"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[المصلحة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="481" y="379" width="70" height="20" uuid="a8900c3d-9cec-4b7e-9cb8-c7c0fb28c4f3"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[يتوجه الى]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="420" width="87" height="20" uuid="f76ee30f-a480-43ab-94f2-bc2fd51685bd"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[تاريخ الذهاب]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="439" width="87" height="20" uuid="500f764d-f4fc-4a2c-8c15-153057181ea6"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[تاريخ العودة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="470" width="150" height="20" uuid="477e91f0-b477-4a81-a7a0-31ffa643ed65"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[طبيعة المهمة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="510" width="102" height="20" uuid="19d90436-e384-4d1a-be86-e8879dc6c49a"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[وسيلة التنقل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="489" y="529" width="62" height="20" uuid="7542573c-a93d-444d-8f60-2b5c31e11c36"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ملاحظات جانبية]]></text>
 			</staticText>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="60" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<staticText>
+				<reportElement x="8" y="30" width="551" height="18" uuid="4a21539c-781f-48af-a598-532ba05738ab"/>
+				<box padding="0">
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Ce document est la propriété d'ALFATRON, il ne peut être reproduit ni diffusé sans son autorisation]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

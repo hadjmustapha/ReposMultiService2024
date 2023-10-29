@@ -42,9 +42,6 @@ public class Employee {
     @Column(name="ID_STRUCTURE")
     Integer idStructure;
 
-    @Column(name="ID_POSTE") // en relation avec Poste
-    Integer idPoste;
-
     @Column(name="DATE_ENTREE")
     //@JsonFormat(pattern="dd-MM-yyyy", timezone = "")
     java.sql.Date dateEntree;
@@ -191,6 +188,10 @@ public class Employee {
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
+    @ManyToOne()
+    @JoinColumn(name="ID_POSTE")
+    Poste posteEmployee;
+
     public Employee() {
     }
 
@@ -248,14 +249,6 @@ public class Employee {
 
     public void setIdStructure(Integer idStructure) {
         this.idStructure = idStructure;
-    }
-
-    public Integer getIdPoste() {
-        return idPoste;
-    }
-
-    public void setIdPoste(Integer idPoste) {
-        this.idPoste = idPoste;
     }
 
     public Date getDateEntree() {
@@ -634,5 +627,11 @@ public class Employee {
         this.ordresDeMissions = ordresDeMissions;
     }
 
+    public Poste getPosteEmployee() {
+        return posteEmployee;
+    }
 
+    public void setPosteEmployee(Poste posteEmployee) {
+        this.posteEmployee = posteEmployee;
+    }
 }

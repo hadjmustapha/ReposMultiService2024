@@ -9,6 +9,7 @@
 7.creation des services
 8.creation des api rest
  8.1 interaction avec la base de donnée (test de sauvegarde et de récupération de données )
+ 8.2 Ajout de la méthode updateOrdreDeMission avec putMapping
 9.Test unitaire
 10.Test d'intération
 11.creation de la gestion d'exception
