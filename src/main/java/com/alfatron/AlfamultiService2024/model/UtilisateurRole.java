@@ -14,17 +14,19 @@ public class UtilisateurRole {
     @Column(name = "ID")
     Integer id;
 
-    @Column(name = "ID_LOGIN")
-    Integer idLogin;
+    @ManyToOne()
+    @JoinColumn(name="ID_LOGIN")
+    Utilisateur utilisateur;
 
     @Column(name = "PROFIL",length = 10)
     String profil;
 
     @Column(name = "MODULE",length = 10)
-    String moducle;
+    String module;
 
-    @Column(name = "ROLE",length = 50)
-    String role;
+    @ManyToOne()
+    @JoinColumn(name="ROLE")
+    Role role;
 
     public UtilisateurRole() {
     }
@@ -37,12 +39,12 @@ public class UtilisateurRole {
         this.id = id;
     }
 
-    public Integer getIdLogin() {
-        return idLogin;
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
     }
 
-    public void setIdLogin(Integer idLogin) {
-        this.idLogin = idLogin;
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
     }
 
     public String getProfil() {
@@ -53,19 +55,19 @@ public class UtilisateurRole {
         this.profil = profil;
     }
 
-    public String getModucle() {
-        return moducle;
+    public String getModule() {
+        return module;
     }
 
-    public void setModucle(String moducle) {
-        this.moducle = moducle;
+    public void setModule(String module) {
+        this.module = module;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 }

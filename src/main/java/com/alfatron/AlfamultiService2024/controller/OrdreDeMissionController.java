@@ -39,42 +39,42 @@ public class OrdreDeMissionController implements OrdreDeMission_Api {
         return ordreDeMissionService.saveOrdreDeMission(ordreDeMissionDto);
     }
 
-    @GetMapping(value = "/FiltreParNomEmployee")
+    @GetMapping(value = "/Filtre_ODM_ParNomEmployee")
     public List<OrdreDeMissionDto> filtreParNomEmployee(@RequestParam String nom){
         return ordreDeMissionService.filtreParNomEmployee(nom);
     }
 
-    @GetMapping(value = "/FiltreParDestination")
+    @GetMapping(value = "/Filtre_ODM_ParDestination")
     public List<OrdreDeMissionDto> filtreParDestination(@RequestParam String destination){
         return ordreDeMissionService.filtreParDestination(destination);
     }
 
-    @GetMapping(value = "/FiltreParObjetDeMission")
+    @GetMapping(value = "/Filtre_ODM_ParObjetDeMission")
     public List<OrdreDeMissionDto> filtreParObjetDeMission(@RequestParam String objet){
         return ordreDeMissionService.filtreParObjetDeMission(objet);
     }
 
-    @GetMapping(value = "/FiltreParStructure")
+    @GetMapping(value = "/Filtre_ODM_ParStructure")
     public List<OrdreDeMissionDto> filtreParStrcuture(@RequestParam String structure){
         return ordreDeMissionService.filtreParStructure(structure);
     }
 
-    @GetMapping(value = "/FiltreParDateOrdreDeMission")
+    @GetMapping(value = "/Filtre_ODM_ParDateOrdreDeMission")
     public List<OrdreDeMissionDto> filtreParDateOrdreDeMission(@RequestParam Date dateOrdreDeMission){
         return ordreDeMissionService.filtreParDateOrdreDeMission(dateOrdreDeMission);
     }
 
-    @GetMapping(value = "/RechercheParDateOrdreDeMission")
+    @GetMapping(value = "/Recherche_ODM_ParDateOrdreDeMission")
     public List<OrdreDeMissionDto> RechercheParDateOrdreDeMission(@RequestParam String dateOrdreDeMission){
         return ordreDeMissionService.RechercheParDateOrdreDeMission(dateOrdreDeMission);
     }
 
-    @GetMapping(value = "/FiltreParRaisonSocialeClient")
+    @GetMapping(value = "/Filtre_ODM_ParRaisonSocialeClient")
     public List<OrdreDeMissionDto> filtreParRaisonSocialeClient(@RequestParam String raisonSociale){
         return ordreDeMissionService.filtreParRaisonSocialeClient(raisonSociale);
     }
 
-    @GetMapping(value = "/FiltreParRaisonSocialeFournisseur")
+    @GetMapping(value = "/Filtre_ODM_ParRaisonSocialeFournisseur")
     public List<OrdreDeMissionDto> filtreParRaisonSocialeFournisseur(@RequestParam String raisonSociale){
         return ordreDeMissionService.filtreParRaisonSocialeFournisseur(raisonSociale);
     }

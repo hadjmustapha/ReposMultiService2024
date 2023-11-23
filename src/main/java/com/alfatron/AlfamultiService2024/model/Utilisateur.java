@@ -1,9 +1,13 @@
 package com.alfatron.AlfamultiService2024.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "SYS_LOGIN")
@@ -20,11 +24,19 @@ public class Utilisateur {
     @Column(name = "PASSWORD", length = 100)
     String password;
 
-    @Column(name = "ID_EMPLOYEE")
-    Integer idEmployee;
+    @ManyToOne()
+    @JoinColumn(name="ID_EMPLOYEE")
+    @JsonIgnore
+    Employee employee;
 
     @Column(name = "ID_PDV")
+    @Transient
+    @JsonIgnore
     Integer idPdv;
+
+    @OneToMany(mappedBy = "utilisateur")
+    @JsonIgnore
+    private List<UtilisateurRole> roles = new ArrayList<>();
 
     public Utilisateur() {
     }
@@ -53,12 +65,12 @@ public class Utilisateur {
         this.password = password;
     }
 
-    public Integer getIdEmployee() {
-        return idEmployee;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setIdEmployee(Integer idEmployee) {
-        this.idEmployee = idEmployee;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Integer getIdPdv() {
@@ -67,5 +79,13 @@ public class Utilisateur {
 
     public void setIdPdv(Integer idPdv) {
         this.idPdv = idPdv;
+    }
+
+    public List<UtilisateurRole> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<UtilisateurRole> roles) {
+        this.roles = roles;
     }
 }
