@@ -188,6 +188,10 @@ public class Employee {
     @JsonIgnore
     private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
 
+    @OneToMany(mappedBy = "employee")
+    @JsonIgnore
+    private List<Utilisateur> utilisateurs = new ArrayList<>();
+
     @ManyToOne()
     @JoinColumn(name="ID_POSTE")
     Poste posteEmployee;
