@@ -1,12 +1,9 @@
 package com.alfatron.AlfamultiService2024.mapper;
 
-import com.alfatron.AlfamultiService2024.dto.ClientDto;
 import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
-import com.alfatron.AlfamultiService2024.model.Client;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
+import com.alfatron.AlfamultiService2024.model.RH_ODM;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 @Mapper(uses = {ClientMapper.class,EmployeeMapper.class,NatureMissionMapper.class,
 StructureMapper.class,VehiculeMapper.class,FournisseurMapper.class, TypeDeTransportMapper.class
@@ -22,7 +19,7 @@ public interface OrdreDeMissionMapper {
     @Mapping(source = "references",target = "objetDeMission")
     @Mapping(source = "client",target = "clientDto")
     @Mapping(source = "remarques",target = "remarquesDto")
-    OrdreDeMissionDto toOrdreDeMissionDto(OrdreDeMission ordreDeMission);
+    OrdreDeMissionDto toOrdreDeMissionDto(RH_ODM ordreDeMission);
 
     @Mapping(source = "typeDeTransportDto",target = "typeDeTransport")
     @Mapping(source = "fournisseurDto",target = "fournisseur")
@@ -33,7 +30,7 @@ public interface OrdreDeMissionMapper {
     @Mapping(source = "objetDeMission",target = "references")
     @Mapping(source = "clientDto",target = "client")
     @Mapping(source = "remarquesDto",target = "remarques")
-    OrdreDeMission toOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto);
+    RH_ODM toOrdreDeMission(OrdreDeMissionDto ordreDeMissionDto);
 
 
 }

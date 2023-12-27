@@ -1,14 +1,14 @@
 package com.alfatron.AlfamultiService2024.mapper;
 
 import com.alfatron.AlfamultiService2024.dto.VehiculeDto;
-import com.alfatron.AlfamultiService2024.model.Vehicule;
+import com.alfatron.AlfamultiService2024.model.MG_INSTALLATIONS;
 import org.mapstruct.Mapper;
 
 @Mapper
 public interface VehiculeMapper {
 
-    VehiculeDto toVehiculeDto(Vehicule vehicule);
+    VehiculeDto toVehiculeDto(MG_INSTALLATIONS vehicule);
 
-    Vehicule toVehicule(VehiculeDto vehiculeDto);
+    MG_INSTALLATIONS toVehicule(VehiculeDto vehiculeDto);
 
 }

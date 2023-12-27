@@ -2,19 +2,13 @@ package com.alfatron.AlfamultiService2024.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "MG_INSTALLATIONS")
-public class Vehicule {
+public class MG_INSTALLATIONS {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,9 +62,9 @@ public class Vehicule {
 
     @OneToMany(mappedBy = "vehicule")
     @JsonIgnore
-    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<RH_ODM> ordresDeMissions = new ArrayList<>();
 
-    public Vehicule() {
+    public MG_INSTALLATIONS() {
     }
 
     public Integer getId() {
@@ -201,11 +195,11 @@ public class Vehicule {
         this.couleur = couleur;
     }
 
-    public List<OrdreDeMission> getOrdresDeMissions() {
+    public List<RH_ODM> getOrdresDeMissions() {
         return ordresDeMissions;
     }
 
-    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+    public void setOrdresDeMissions(List<RH_ODM> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
 

@@ -1,23 +1,16 @@
 package com.alfatron.AlfamultiService2024.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Immutable;
 
-import java.awt.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "ORG_EMPLOYEE")
-public class Employee {
+public class ORG_EMPLOYEE {
 
     @Id
     @Column(name="ID")
@@ -186,17 +179,17 @@ public class Employee {
 
     @OneToMany(mappedBy = "employee")
     @JsonIgnore
-    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<RH_ODM> ordresDeMissions = new ArrayList<>();
 
     @OneToMany(mappedBy = "employee")
     @JsonIgnore
-    private List<Utilisateur> utilisateurs = new ArrayList<>();
+    private List<SYS_LOGIN> utilisateurs = new ArrayList<>();
 
     @ManyToOne()
     @JoinColumn(name="ID_POSTE")
-    Poste posteEmployee;
+    RH_POSTE posteEmployee;
 
-    public Employee() {
+    public ORG_EMPLOYEE() {
     }
 
     public Integer getId() {
@@ -623,19 +616,21 @@ public class Employee {
         this.unite = unite;
     }
 
-    public List<OrdreDeMission> getOrdresDeMissions() {
+    public List<RH_ODM> getOrdresDeMissions() {
         return ordresDeMissions;
     }
 
-    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+    public void setOrdresDeMissions(List<RH_ODM> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
 
-    public Poste getPosteEmployee() {
+    public RH_POSTE getPosteEmployee() {
         return posteEmployee;
     }
 
-    public void setPosteEmployee(Poste posteEmployee) {
+    public void setPosteEmployee(RH_POSTE posteEmployee) {
         this.posteEmployee = posteEmployee;
     }
+
+
 }

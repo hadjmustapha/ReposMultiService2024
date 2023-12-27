@@ -1,8 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
 import com.alfatron.AlfamultiService2024.dto.RoleDto;
-import com.alfatron.AlfamultiService2024.dto.UtilisateurDto;
-import com.alfatron.AlfamultiService2024.model.Role;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;

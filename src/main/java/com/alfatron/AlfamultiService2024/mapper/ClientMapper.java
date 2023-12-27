@@ -1,15 +1,13 @@
 package com.alfatron.AlfamultiService2024.mapper;
 
 import com.alfatron.AlfamultiService2024.dto.ClientDto;
-import com.alfatron.AlfamultiService2024.model.Client;
+import com.alfatron.AlfamultiService2024.model.COM_CLIENT;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface ClientMapper {
 
-    ClientDto toClientDto(Client client);
+    ClientDto toClientDto(COM_CLIENT comClient);
 
-    Client toClient(ClientDto clientDto);
+    COM_CLIENT toCom_Client(ClientDto clientDto);
 }

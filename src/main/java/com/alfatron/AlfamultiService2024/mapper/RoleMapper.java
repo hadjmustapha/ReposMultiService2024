@@ -1,14 +1,13 @@
 package com.alfatron.AlfamultiService2024.mapper;
 
 import com.alfatron.AlfamultiService2024.dto.RoleDto;
-import com.alfatron.AlfamultiService2024.model.Role;
+import com.alfatron.AlfamultiService2024.model.SYS_ROLE;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper
 public interface RoleMapper {
 
-     Role toRole(RoleDto roleDto);
+     SYS_ROLE toRole(RoleDto roleDto);
 
-     RoleDto toRoleDto(Role role);
+     RoleDto toRoleDto(SYS_ROLE alfaRole);
 }

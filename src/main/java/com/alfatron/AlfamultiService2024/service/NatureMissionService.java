@@ -4,11 +4,9 @@ import com.alfatron.AlfamultiService2024.dto.NatureMissionDto;
 import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.NatureMissionMapper;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
+import com.alfatron.AlfamultiService2024.model.RH_ODM;
 import com.alfatron.AlfamultiService2024.repository.NatureMissionRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,13 +41,13 @@ public class NatureMissionService {
     }
 
     @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
+    public void addOrdreDeMission(RH_ODM odm){
        // ordresDeMissions.add(odm);
        // odm.setNatureMission(this);
     }
 
     @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
+    public void deleteOrdreDeMission(RH_ODM odm){
        // ordresDeMissions.remove(odm);
        // odm.setNatureMission(null);
     }

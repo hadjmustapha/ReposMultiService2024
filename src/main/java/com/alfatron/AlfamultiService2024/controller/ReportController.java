@@ -32,6 +32,7 @@ public class ReportController {
 
     @GetMapping(value ="/{id}",produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> reporting(@PathVariable Integer id) throws JRException, IOException {
+        System.out.println("-----------------------------------ReportController----------------------");
         return jasperService.reporting(id);
     }
 

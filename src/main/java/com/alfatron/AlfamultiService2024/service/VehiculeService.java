@@ -4,11 +4,9 @@ import com.alfatron.AlfamultiService2024.dto.VehiculeDto;
 import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.VehiculeMapper;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
+import com.alfatron.AlfamultiService2024.model.RH_ODM;
 import com.alfatron.AlfamultiService2024.repository.VehiculeRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,12 +39,12 @@ public class VehiculeService {
     }
 
     @Transactional
-    public void addOrdreDeMission(OrdreDeMission odm){
+    public void addOrdreDeMission(RH_ODM odm){
       //  ordresDeMissions.add(odm);
        // odm.setVehicule(this);
     }
     @Transactional
-    public void deleteOrdreDeMission(OrdreDeMission odm){
+    public void deleteOrdreDeMission(RH_ODM odm){
         //odm.setVehicule(null);
         //ordresDeMissions.remove(odm);
     }

@@ -1,42 +1,40 @@
 package com.alfatron.AlfamultiService2024.repository;
 
-import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
+import com.alfatron.AlfamultiService2024.model.RH_ODM;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
 
 @Repository
-public interface OrdreDeMissionRepository extends JpaRepository<OrdreDeMission,Integer> {
+public interface OrdreDeMissionRepository extends JpaRepository<RH_ODM,Integer> {
 
-    @Query("Select odm from OrdreDeMission odm where odm.employee.nom LIKE CONCAT('%',:nomEmployee,'%')")
-    List<OrdreDeMission> filtreParNomEmployee(String nomEmployee,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.employee.nom LIKE CONCAT('%',:nomEmployee,'%')")
+    List<RH_ODM> filtreParNomEmployee(String nomEmployee, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.destination LIKE CONCAT('%',:destinationParam,'%')")
-    List<OrdreDeMission> filtreParDestination(String destinationParam,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.destination LIKE CONCAT('%',:destinationParam,'%')")
+    List<RH_ODM> filtreParDestination(String destinationParam, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.references LIKE CONCAT('%',:objet,'%')")
-    List<OrdreDeMission> filtreParObjetDeMission(String objet,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.references LIKE CONCAT('%',:objet,'%')")
+    List<RH_ODM> filtreParObjetDeMission(String objet, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.structure.libelle LIKE CONCAT('%',:structure,'%')")
-    List<OrdreDeMission> filtreParStructure(String structure,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.structure.libelle LIKE CONCAT('%',:structure,'%')")
+    List<RH_ODM> filtreParStructure(String structure, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.dateOrdreDeMission = :date")
-    List<OrdreDeMission> filtreParDateOrdreDeMission(Date date,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.dateOrdreDeMission = :date")
+    List<RH_ODM> filtreParDateOrdreDeMission(Date date, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where cast(odm.dateOrdreDeMission as string) LIKE CONCAT('%',:date,'%')")
-    List<OrdreDeMission> RechercheParDateOrdreDeMission(String date,Sort sort);
+    @Query("Select odm from RH_ODM odm where cast(odm.dateOrdreDeMission as string) LIKE CONCAT('%',:date,'%')")
+    List<RH_ODM> RechercheParDateOrdreDeMission(String date, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.client.raisonSociale LIKE CONCAT('%',:raisonSociale,'%')")
-    List<OrdreDeMission> filtreParRaisonSocialeClient(String raisonSociale,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.client.raisonSociale LIKE CONCAT('%',:raisonSociale,'%')")
+    List<RH_ODM> filtreParRaisonSocialeClient(String raisonSociale, Sort sort);
 
-    @Query("Select odm from OrdreDeMission odm where odm.fournisseur.raisonSociale LIKE CONCAT('%',:raisonSociale,'%')")
-    List<OrdreDeMission> filtreParRaisonSocialeFournisseur(String raisonSociale,Sort sort);
+    @Query("Select odm from RH_ODM odm where odm.fournisseur.raisonSociale LIKE CONCAT('%',:raisonSociale,'%')")
+    List<RH_ODM> filtreParRaisonSocialeFournisseur(String raisonSociale, Sort sort);
 
 /*
 

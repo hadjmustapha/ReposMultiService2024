@@ -1,7 +1,6 @@
 package com.alfatron.AlfamultiService2024.controller.api;
 
 import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.MediaType;
@@ -9,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface OrdreDeMission_Api {
 

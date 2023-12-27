@@ -1,18 +1,16 @@
 package com.alfatron.AlfamultiService2024.service;
 
 import com.alfatron.AlfamultiService2024.dto.RoleDto;
-import com.alfatron.AlfamultiService2024.dto.UtilisateurDto;
 import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.RoleMapper;
-import com.alfatron.AlfamultiService2024.model.Role;
-import com.alfatron.AlfamultiService2024.model.UtilisateurRole;
+import com.alfatron.AlfamultiService2024.model.SYS_ROLE;
+import com.alfatron.AlfamultiService2024.model.SYS_LOGIN_PROFIL;
 import com.alfatron.AlfamultiService2024.repository.RoleRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,20 +39,20 @@ public class RoleService {
 
     public RoleDto findUsersByRole(String role) {
         Sort sort = Sort.by(Sort.Direction.DESC, "id");
-        Role roleModel = roleRepository.filtreParRole(role, sort)
+        SYS_ROLE alfaRoleModel = roleRepository.filtreParRole(role, sort)
                 .orElseThrow(() -> new Custom_EntityNotFoundException("Aucun role trouvé avec id : " + role, ErrorCodes.ROLE_NOT_FOUND));
 
-        RoleDto roleDto = listUsers_toListUsersDto(roleModel);
+        RoleDto roleDto = listUsers_toListUsersDto(alfaRoleModel);
 
         return roleDto;
     }
 
-    public RoleDto listUsers_toListUsersDto(Role role) {
+    public RoleDto listUsers_toListUsersDto(SYS_ROLE alfaRole) {
 
-        RoleDto roleDto = roleMapper.toRoleDto(role);
+        RoleDto roleDto = roleMapper.toRoleDto(alfaRole);
 
-        for (UtilisateurRole utilisateurRole : role.getUtilisateurs()) {
-            if (role.getUtilisateurs() != null) {
+        for (SYS_LOGIN_PROFIL utilisateurRole : alfaRole.getUtilisateurs()) {
+            if (alfaRole.getUtilisateurs() != null) {
                 roleDto.getUserDtos().add(utilisateurRole.getUtilisateur().getUsername());
             }
 

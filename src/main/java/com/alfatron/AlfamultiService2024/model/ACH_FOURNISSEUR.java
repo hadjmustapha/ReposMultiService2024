@@ -3,11 +3,6 @@ package com.alfatron.AlfamultiService2024.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ACH_FOURNISSEUR")
-public class Fournisseur {
+public class ACH_FOURNISSEUR {
 
     @Id
     @Column(name="ID")
@@ -123,9 +118,9 @@ public class Fournisseur {
 
     @OneToMany(mappedBy = "fournisseur")
     @JsonIgnore
-    List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    List<RH_ODM> ordresDeMissions = new ArrayList<>();
 
-    public Fournisseur() {
+    public ACH_FOURNISSEUR() {
     }
 
     public Integer getId() {
@@ -400,11 +395,11 @@ public class Fournisseur {
         this.numeroIdentificationSociale = numeroIdentificationSociale;
     }
 
-    public List<OrdreDeMission> getOrdresDeMissions() {
+    public List<RH_ODM> getOrdresDeMissions() {
         return ordresDeMissions;
     }
 
-    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+    public void setOrdresDeMissions(List<RH_ODM> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
 

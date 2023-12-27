@@ -2,15 +2,11 @@ package com.alfatron.AlfamultiService2024.controller;
 
 import com.alfatron.AlfamultiService2024.controller.api.Role_Api;
 import com.alfatron.AlfamultiService2024.dto.RoleDto;
-import com.alfatron.AlfamultiService2024.dto.UtilisateurDto;
-import com.alfatron.AlfamultiService2024.model.Role;
 import com.alfatron.AlfamultiService2024.service.RoleService;
-import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 

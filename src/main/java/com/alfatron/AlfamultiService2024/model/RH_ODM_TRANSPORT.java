@@ -2,18 +2,13 @@ package com.alfatron.AlfamultiService2024.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "RH_ODM_TRANSPORT")
-public class TypeDeTransport {
+public class RH_ODM_TRANSPORT {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,9 +20,9 @@ public class TypeDeTransport {
 
     @OneToMany(mappedBy = "typeDeTransport")
     @JsonIgnore
-    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<RH_ODM> ordresDeMissions = new ArrayList<>();
 
-    public TypeDeTransport() {
+    public RH_ODM_TRANSPORT() {
     }
 
     public Integer getId() {
@@ -46,11 +41,11 @@ public class TypeDeTransport {
         this.libelle = libelle;
     }
 
-    public List<OrdreDeMission> getOrdresDeMissions() {
+    public List<RH_ODM> getOrdresDeMissions() {
         return ordresDeMissions;
     }
 
-    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+    public void setOrdresDeMissions(List<RH_ODM> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
 

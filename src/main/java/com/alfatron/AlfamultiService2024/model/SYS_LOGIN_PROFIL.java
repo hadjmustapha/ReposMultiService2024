@@ -1,13 +1,10 @@
 package com.alfatron.AlfamultiService2024.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "SYS_LOGIN_PROFIL")
-public class UtilisateurRole {
+public class SYS_LOGIN_PROFIL {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +13,7 @@ public class UtilisateurRole {
 
     @ManyToOne()
     @JoinColumn(name="ID_LOGIN")
-    Utilisateur utilisateur;
+    SYS_LOGIN utilisateur;
 
     @Column(name = "PROFIL",length = 10)
     String profil;
@@ -26,9 +23,9 @@ public class UtilisateurRole {
 
     @ManyToOne()
     @JoinColumn(name="ROLE")
-    Role role;
+    SYS_ROLE sysRole;
 
-    public UtilisateurRole() {
+    public SYS_LOGIN_PROFIL() {
     }
 
     public Integer getId() {
@@ -39,11 +36,11 @@ public class UtilisateurRole {
         this.id = id;
     }
 
-    public Utilisateur getUtilisateur() {
+    public SYS_LOGIN getUtilisateur() {
         return utilisateur;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
+    public void setUtilisateur(SYS_LOGIN utilisateur) {
         this.utilisateur = utilisateur;
     }
 
@@ -63,11 +60,11 @@ public class UtilisateurRole {
         this.module = module;
     }
 
-    public Role getRole() {
-        return role;
+    public SYS_ROLE getAlfaRole() {
+        return sysRole;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setAlfaRole(SYS_ROLE sysRole) {
+        this.sysRole = sysRole;
     }
 }

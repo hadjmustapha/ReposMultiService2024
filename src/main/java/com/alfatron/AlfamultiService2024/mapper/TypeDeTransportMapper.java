@@ -1,13 +1,13 @@
 package com.alfatron.AlfamultiService2024.mapper;
 
 import com.alfatron.AlfamultiService2024.dto.TypeDeTransportDto;
-import com.alfatron.AlfamultiService2024.model.TypeDeTransport;
+import com.alfatron.AlfamultiService2024.model.RH_ODM_TRANSPORT;
 import org.mapstruct.Mapper;
 
 @Mapper
 public interface TypeDeTransportMapper {
 
-    TypeDeTransportDto toTypeDeTransportDto(TypeDeTransport typeDeTransport);
+    TypeDeTransportDto toTypeDeTransportDto(RH_ODM_TRANSPORT typeDeTransport);
 
-    TypeDeTransport toTypeDeTransport(TypeDeTransportDto typeDeTransportDto);
+    RH_ODM_TRANSPORT toTypeDeTransport(TypeDeTransportDto typeDeTransportDto);
 }

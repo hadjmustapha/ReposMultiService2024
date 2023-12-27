@@ -1,9 +1,6 @@
 package com.alfatron.AlfamultiService2024.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.DynamicUpdate;
 
 import java.sql.Date;
@@ -12,7 +9,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "RH_ODM")
 @DynamicUpdate
-public class OrdreDeMission {
+public class RH_ODM {
 
     @Id
     @Column(name="ID")
@@ -30,25 +27,25 @@ public class OrdreDeMission {
 
     @ManyToOne()
     @JoinColumn(name="ID_EMP")
-    Employee employee;
+    ORG_EMPLOYEE employee;
 
     @Column(name="REFERENCE", length = 200)
     String references;
 
     @ManyToOne
     @JoinColumn(name="NATURE")
-    NatureMission natureMission;
+    RH_NATURE_ODM natureMission;
 
     @Column(name="ID_TRANS")
     Integer idtransport;
 
     @ManyToOne
     @JoinColumn(name="ID_STRUCTURE")
-    Structure structure;
+    ORG_STRUCTURE structure;
 
     @ManyToOne
     @JoinColumn(name="MOYEN_TRANS")
-    Vehicule vehicule;
+    MG_INSTALLATIONS vehicule;
 
     @Column(name="DESTINATION", length = 100)
     String destination ;//	nvarchar(100)
@@ -58,11 +55,11 @@ public class OrdreDeMission {
 
     @ManyToOne
     @JoinColumn(name="CLIENT")
-    Client client;
+    COM_CLIENT client;
 
     @ManyToOne
     @JoinColumn(name="FRS")
-    Fournisseur fournisseur;
+    ACH_FOURNISSEUR fournisseur;
 
     @Column(name="PROJET", length = 50)
     String projet;
@@ -87,7 +84,7 @@ public class OrdreDeMission {
 
     @ManyToOne()
     @JoinColumn(name="TRANSPORT")
-    TypeDeTransport typeDeTransport;
+    RH_ODM_TRANSPORT typeDeTransport;
 
     @Column(name="REMARQUES")
     String remarques;
@@ -104,7 +101,7 @@ public class OrdreDeMission {
     @Column(name="ID_USER")
     Integer idUtilisateur;// int toRelation
 
-    public OrdreDeMission() {
+    public RH_ODM() {
     }
 
     public Integer getId() {
@@ -139,12 +136,12 @@ public class OrdreDeMission {
         this.nombreDeJours = nombreDeJours;
     }
 
-    public Employee getEmployee() {
+    public ORG_EMPLOYEE getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(ORG_EMPLOYEE ORGEMPLOYEE) {
+        this.employee = ORGEMPLOYEE;
     }
 
     public String getReferences() {
@@ -155,11 +152,11 @@ public class OrdreDeMission {
         this.references = references;
     }
 
-    public NatureMission getNatureMission() {
+    public RH_NATURE_ODM getNatureMission() {
         return natureMission;
     }
 
-    public void setNatureMission(NatureMission natureMission) {
+    public void setNatureMission(RH_NATURE_ODM natureMission) {
         this.natureMission = natureMission;
     }
 
@@ -171,19 +168,19 @@ public class OrdreDeMission {
         this.idtransport = idtransport;
     }
 
-    public Structure getStructure() {
+    public ORG_STRUCTURE getStructure() {
         return structure;
     }
 
-    public void setStructure(Structure structure) {
+    public void setStructure(ORG_STRUCTURE structure) {
         this.structure = structure;
     }
 
-    public Vehicule getVehicule() {
+    public MG_INSTALLATIONS getVehicule() {
         return vehicule;
     }
 
-    public void setVehicule(Vehicule vehicule) {
+    public void setVehicule(MG_INSTALLATIONS vehicule) {
         this.vehicule = vehicule;
     }
 
@@ -203,19 +200,19 @@ public class OrdreDeMission {
         this.structureOrdonatrice = structureOrdonatrice;
     }
 
-    public Client getClient() {
+    public COM_CLIENT getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClient(COM_CLIENT comClient) {
+        this.client = comClient;
     }
 
-    public Fournisseur getFournisseur() {
+    public ACH_FOURNISSEUR getFournisseur() {
         return fournisseur;
     }
 
-    public void setFournisseur(Fournisseur fournisseur) {
+    public void setFournisseur(ACH_FOURNISSEUR fournisseur) {
         this.fournisseur = fournisseur;
     }
 
@@ -275,11 +272,11 @@ public class OrdreDeMission {
         this.editedBy = editedBy;
     }
 
-    public TypeDeTransport getTypeDeTransport() {
+    public RH_ODM_TRANSPORT getTypeDeTransport() {
         return typeDeTransport;
     }
 
-    public void setTypeDeTransport(TypeDeTransport typeDeTransport) {
+    public void setTypeDeTransport(RH_ODM_TRANSPORT typeDeTransport) {
         this.typeDeTransport = typeDeTransport;
     }
 

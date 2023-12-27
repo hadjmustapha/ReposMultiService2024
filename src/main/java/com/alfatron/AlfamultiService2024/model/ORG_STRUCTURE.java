@@ -3,17 +3,13 @@ package com.alfatron.AlfamultiService2024.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "ORG_STRUCTURE")
-public class Structure {
+public class ORG_STRUCTURE {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +27,9 @@ public class Structure {
 
     @OneToMany(mappedBy = "structure")
     @JsonIgnore
-    private List<OrdreDeMission> ordresDeMissions = new ArrayList<>();
+    private List<RH_ODM> ordresDeMissions = new ArrayList<>();
 
-    public Structure() {
+    public ORG_STRUCTURE() {
     }
 
     public Integer getId() {
@@ -68,11 +64,11 @@ public class Structure {
         this.idImage = idImage;
     }
 
-    public List<OrdreDeMission> getOrdresDeMissions() {
+    public List<RH_ODM> getOrdresDeMissions() {
         return ordresDeMissions;
     }
 
-    public void setOrdresDeMissions(List<OrdreDeMission> ordresDeMissions) {
+    public void setOrdresDeMissions(List<RH_ODM> ordresDeMissions) {
         this.ordresDeMissions = ordresDeMissions;
     }
 

@@ -1,6 +1,5 @@
 package com.alfatron.AlfamultiService2024.model;
 
-import com.alfatron.AlfamultiService2024.model.Employee;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -9,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "RH_POSTE")
-public class Poste {
+public class RH_POSTE {
 
     @Id
     @Column(name="ID")
@@ -33,9 +32,9 @@ public class Poste {
 
     @OneToMany(mappedBy ="posteEmployee")
     @JsonIgnore
-    private List<Employee> employees = new ArrayList<>();
+    private List<ORG_EMPLOYEE> ORGEMPLOYEES = new ArrayList<>();
 
-    public Poste() {
+    public RH_POSTE() {
     }
 
     public Integer getId() {
@@ -86,11 +85,11 @@ public class Poste {
         this.idStructure = idStructure;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public List<ORG_EMPLOYEE> getEmployees() {
+        return ORGEMPLOYEES;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void setEmployees(List<ORG_EMPLOYEE> ORGEMPLOYEES) {
+        this.ORGEMPLOYEES = ORGEMPLOYEES;
     }
 }

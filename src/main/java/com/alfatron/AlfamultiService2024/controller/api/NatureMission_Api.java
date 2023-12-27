@@ -2,19 +2,13 @@ package com.alfatron.AlfamultiService2024.controller.api;
 
 
 import com.alfatron.AlfamultiService2024.dto.NatureMissionDto;
-import com.alfatron.AlfamultiService2024.model.NatureMission;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public interface NatureMission_Api {

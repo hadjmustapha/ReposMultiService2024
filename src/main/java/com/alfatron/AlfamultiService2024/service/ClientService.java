@@ -4,11 +4,7 @@ import com.alfatron.AlfamultiService2024.dto.ClientDto;
 import com.alfatron.AlfamultiService2024.exception.Custom_EntityNotFoundException;
 import com.alfatron.AlfamultiService2024.exception.ErrorCodes;
 import com.alfatron.AlfamultiService2024.mapper.ClientMapper;
-import com.alfatron.AlfamultiService2024.model.OrdreDeMission;
 import com.alfatron.AlfamultiService2024.repository.ClientRepository;
-import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,7 +35,6 @@ public class ClientService {
        return clientRepository.findById(id)
                .map(clientMapper::toClientDto)
                .orElseThrow(()-> new Custom_EntityNotFoundException("Aucun client trouvé avec id : "+id ,ErrorCodes.CLIENT_NOT_FOUND));
-
     }
 
     /*
@@ -54,6 +49,7 @@ public class ClientService {
         ordresDeMissions.remove(odm);
     }
     */
+
 
 
 }

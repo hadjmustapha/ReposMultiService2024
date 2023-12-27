@@ -1,33 +1,97 @@
 ***************** ROADMAP ************************
-1.cration du projet
-2.mettre sous git -> branch dev
-3.push sur github
 
-4.creation des entitées
-5.faire mapping et creation dao
-6.creation des dto
-7.creation des services
-8.creation des api rest
- 8.1 interaction avec la base de donnée (test de sauvegarde et de récupération de données )
- 8.2 Ajout de la méthode updateOrdreDeMission avec putMapping
-9.Test unitaire
-10.Test d'intération
-11.creation de la gestion d'exception
+ODM : Ordre de mission
 
-depoloiment de l'application en production
+Métier :
+
+     8.2 CRUD Ordre de mission (faire en sorte que les dépendances se font via API ex: get Employée by id )
+     8.3 Etat de sortie ODM
+
+     8.4 Ajout partie calcul des frais de mission ( table detail de l'ordre de mission )
+     8.5 Etat de sortie calcul des frais de ODM
+
+         Demande Interne
+
+         Demande MG MG_DEMANDE
+
+         Demande de véhicule
+
+         Reservation de salle de réunion
+
+
+
+Technique :
+
+    1.cration du projet
+    2.mettre sous git -> branch dev
+    3.push sur github
+    4.creation des entitées
+    6.creation des dto ( à revoir selon le métier )
+        7.creation des services
+        8.creation des api rest
+         8.1 Interaction avec la base de donnée (test de sauvegarde et de récupération de données )5.faire mapping et creation dao
+    8.6 retravail de la partie DTO ( VIEW , procédure stocké , table direct )
+    Documentation Swagger (OpenApi)
+
+    Test :
+        Jmeter (Tester plusieurs Appel api en même temps)
+        9.Test unitaire (given when then)
+           Mockito
+           Junit
+        10.Test d'intégration
+
+
+    11.creation de la gestion d'exception global (controller advice)
+    12. Clean Code - Clean Architecture
+
+Sécurité :
+
+          12.1 connexion et inscription (création des comptes) via des apis
+          12.1 sécurité avec jwt et refresh token
+          12.2 Gestion des roles et des permission (accéss au resources se fait via les permission)
+          12.3 Activation des comptes utilisateurs via des codes avec SMS et ou Email avec DOCKER
+          12.4 Reset password dans le cas ou le mot de passe est oublié
+          12.5 Gestion des exception liés à la sécurité (acces denied , signature jwt, jwt expire ...etc).
+          12.6 Penser à ce que la partie sécurité soit mis à part dans un micro service travailler avec docker et kubernetes
+          12.7 CORS ( Cross Origin Ressource )
+          12.8 Travailez avec HTTPS
+
+Déploiement :
+    Mettre le projet sous forme d'un micro service sous docker
+    Kubernetes
+    DEVOPS
+    Jenkins
+    CI / CD
+    depoloiment de l'application en production
 ************************************************
 
 ***************** Database ***********************
 Nombre de tables : 11
-1.RH_ODM                ( Ordre de mission )
-2.ORG_EMPLOYEE          ( Employee )
-3.RH_NATURE_ODM         ( Nature de mission )
-4.ORG_STRUCTURE         ( Structure )
-5.COM_CLIENT            ( Client )
-6.ACH_FOURNISSEUR       ( Fournisseur )
-7.RH_ODM_TRANSPORT      ( Transport )
-8.MG_INSTALLATIONS      ( Vehicule )
-9.SYS_LOGIN             ( User )
-10.SYS_ROLE             ( Role )
-11.SYS_LOGIN_PROFIL     ( User_role)
 
+MicroService RH
+  RH_ODM                    ( Ordre de mission )
+  ORG_EMPLOYEE              ( Employee )
+  RH_NATURE_ODM             ( Nature de mission )
+  ORG_STRUCTURE             ( Structure )
+  RH_ODM_TRANSPORT          ( Transport )
+
+MicroService COMMERCIAL
+  COM_CLIENT                ( Client )
+
+MicroService APPRO
+  ACH_FOURNISSEUR           ( Fournisseur )
+
+MicroService MGX
+  MG_INSTALLATIONS          ( Vehicule )
+  MG_DEMANDE                ( Demande moyen généraux )*
+  MG_DEMANDE_INTERVENTION   ( Demande d'intervention )*
+  MG_VE_DEMANDE             ( Demande de véhicule ) *
+  MG_SALLE_RESERVATION      ( Réservation de salle de réunion )
+
+MicroService STOCK
+  ST_DI                     ( Demande Interne )*
+
+MicroService Sécurité
+  SYS_LOGIN                 ( User )
+  SYS_ROLE                  ( Role )
+  SYS_LOGIN_PROFIL          ( User_role)
