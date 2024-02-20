@@ -3,7 +3,6 @@ package com.alfatron.AlfamultiService2024.service;
 import com.alfatron.AlfamultiService2024.dto.OrdreDeMissionDto;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,19 +11,16 @@ import org.springframework.stereotype.Service;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class JasperService {
 
-    NatureMissionService natureMissionService;
-    OrdreDeMissionService ordreDeMissionService;
+    RH_NATURE_ODM_Service natureMissionService;
+    RH_ODM_Service ordreDeMissionService;
 
-    public JasperService(NatureMissionService natureMissionService,OrdreDeMissionService ordreDeMissionService) {
+    public JasperService(RH_NATURE_ODM_Service natureMissionService, RH_ODM_Service ordreDeMissionService) {
         this.natureMissionService = natureMissionService;
         this.ordreDeMissionService = ordreDeMissionService;
     }

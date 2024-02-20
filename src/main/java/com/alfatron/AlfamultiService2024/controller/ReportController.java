@@ -1,20 +1,13 @@
 package com.alfatron.AlfamultiService2024.controller;
 
-import com.alfatron.AlfamultiService2024.dto.NatureMissionDto;
 import com.alfatron.AlfamultiService2024.service.JasperService;
-import com.alfatron.AlfamultiService2024.service.NatureMissionService;
+import com.alfatron.AlfamultiService2024.service.RH_NATURE_ODM_Service;
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 
@@ -23,9 +16,9 @@ import static com.alfatron.AlfamultiService2024.utils.Constant.APP_ROOT;
 @CrossOrigin
 public class ReportController {
 
-    NatureMissionService natureMissionService;
+    RH_NATURE_ODM_Service natureMissionService;
     JasperService jasperService;
-    public ReportController(NatureMissionService natureMissionService,JasperService jasperService) {
+    public ReportController(RH_NATURE_ODM_Service natureMissionService, JasperService jasperService) {
         this.natureMissionService = natureMissionService;
         this.jasperService = jasperService;
     }

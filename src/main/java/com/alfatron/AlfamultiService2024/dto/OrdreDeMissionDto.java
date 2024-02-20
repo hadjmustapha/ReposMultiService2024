@@ -1,6 +1,7 @@
 package com.alfatron.AlfamultiService2024.dto;
 
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +26,7 @@ public class OrdreDeMissionDto {
 
     EmployeeDto employeeDto;
 
+    //NatureMissionDto natureMissionDto;
     NatureMissionDto natureMissionDto;
 
     StructureDto structureDto;
@@ -36,6 +38,8 @@ public class OrdreDeMissionDto {
     TypeDeTransportDto typeDeTransportDto;
 
     String remarquesDto;
+
+    //liste de rubrique (frais de mission)
 
     public Integer getId() {
         return id;
@@ -125,9 +129,7 @@ public class OrdreDeMissionDto {
         this.vehiculeDto = vehiculeDto;
     }
 
-    public FournisseurDto getFournisseurDto() {
-        return fournisseurDto;
-    }
+    public FournisseurDto getFournisseurDto() { return fournisseurDto; }
 
     public void setFournisseurDto(FournisseurDto fournisseurDto) {
         this.fournisseurDto = fournisseurDto;

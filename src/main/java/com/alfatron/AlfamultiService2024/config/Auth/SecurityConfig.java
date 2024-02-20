@@ -1,7 +1,7 @@
 package com.alfatron.AlfamultiService2024.config.Auth;
 
 
-import com.alfatron.AlfamultiService2024.service.UtilisateurService;
+import com.alfatron.AlfamultiService2024.service.SYS_LOGIN_Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +28,7 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    private final UtilisateurService utilisateurService;
+    private final SYS_LOGIN_Service utilisateurService;
 
     private static final String[] WHITE_LIST_URL = {"/MultiService2024/v1/auth/**",
             "/MultiService2024/v1/Structure/**",
@@ -49,7 +49,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request->request.requestMatchers(WHITE_LIST_URL)
                         .permitAll()
-                        .requestMatchers("/MultiService2024/v1/Vehicule/**").hasAnyAuthority("MG_MODULE")
+                        //.requestMatchers("/MultiService2024/v1/Vehicule/**").hasAnyAuthority("MG_MODULE")
                         .anyRequest()
                         .authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

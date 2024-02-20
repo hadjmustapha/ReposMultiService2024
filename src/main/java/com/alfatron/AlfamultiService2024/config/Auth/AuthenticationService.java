@@ -2,8 +2,8 @@ package com.alfatron.AlfamultiService2024.config.Auth;
 
 import com.alfatron.AlfamultiService2024.dto.AuthenticationRequest;
 import com.alfatron.AlfamultiService2024.dto.AuthenticationResponse;
-import com.alfatron.AlfamultiService2024.repository.UtilisateurRepository;
-import com.alfatron.AlfamultiService2024.service.UtilisateurService;
+import com.alfatron.AlfamultiService2024.repository.SYS_LOGIN_Repository;
+import com.alfatron.AlfamultiService2024.service.SYS_LOGIN_Service;
 import lombok.RequiredArgsConstructor;
 import org.jfree.util.Log;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,9 +17,9 @@ import java.util.HashMap;
 @RequiredArgsConstructor
 public class AuthenticationService {
 
-    private final UtilisateurRepository utilisateurRepository;
+    private final SYS_LOGIN_Repository utilisateurRepository;
 
-    private final UtilisateurService utilisateurService;
+    private final SYS_LOGIN_Service utilisateurService;
 
     private final PasswordEncoder passwordEncoder;
 
